@@ -1,0 +1,962 @@
+/*
+ Theme Name:   Le cri de la girafe
+ Theme URI:    http://lecridelagirafe.org
+ Description:  Thème du site le cri de la girafe
+ Author:       Jean-Marie Favreau
+ Author URI:   http://jmfavreau.info
+ Template:     suits
+ Version:      1.0.0
+ License:      GNU General Public License v3 or later
+ License URI:  http://www.gnu.org/licenses/gpl-3.0.html
+ Tags:         light, responsive-layout, accessibility-ready
+ Text Domain:  le-cri-de-la-girafe
+*/
+
+
+/** nos échos et nos cris */
+.lcdlg-archive article {
+		overflow: hidden;
+		break-inside: avoid-column;
+		position: relative;
+		/*float: left;*/
+}
+.lcdlg-portfolio {
+		overflow: hidden;
+		clear: both;
+		-webkit-column-count: 4;
+		-moz-column-count: 4;
+		column-count: 4;
+		column-gap: 1em;
+}
+
+#secondary {
+	display: none;
+}
+
+/** les tags */
+.lcdlg-tags {
+		clear: both;
+}
+.lcdlg-tag {
+		display: inline-block;
+		background: #000;
+		padding: 0.2em 1em;
+		border-radius: 0.4em;
+		float: right;
+		color: #fff !important;
+		margin: 0.1em;
+		font-weight: bold;
+		text-transform : uppercase;
+}
+
+a.lcdlg-tag {
+	opacity: 0.8;
+}
+a.lcdlg-tag:hover {
+	opacity: 1.0;
+	text-shadow: 0 0 0.5em #888;
+}
+
+.lcdlg-tag-contenu {
+		background: #69905e;
+}
+
+.lcdlg-tag-duree {
+	background: #908028;
+}
+
+.lcdlg-tag-recurrence {
+	background: #514048;
+}
+.lcdlg-tag-theme {
+		background: #90654b;
+}
+
+
+.auteur-contributions ul, .auteur-contributions-actualites ul, .son-auteur ul, .lcdlg-themes ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+}
+
+.lcdlg-themes {
+		clear: both;
+		float: right;
+		width: 50%;
+		display: block;
+}
+@media screen and (max-width : 768px) {
+	.lcdlg-themes {
+		width: 100%;
+	}
+}
+
+.lcdlg-themes li {
+		display: block;
+}
+
+h1 .lcdlg-tag {
+		float: none;
+}
+
+.lcdlg-line {
+		padding: 0.2em 1em;
+		background: #fff;
+		border-bottom: 1px solid #404040;
+		display: block;
+		min-height: 5em;
+		margin: 0.8em 0;
+}
+
+.lcdlg-line:hover {
+		background: #f8f8f8;
+}
+
+.lcdlg-line>span {
+		display: inline-block;
+		margin-top: 1.6em;
+		font-weight: bold;
+		color: #222;
+}
+
+.lcdlg-line:hover>span {
+		color: #000;
+}
+.lcdlg-line img {
+		height: 4em;
+		vertical-align: center;
+		margin-right: 1em;
+		margin-top: 0.4em;
+		width: auto;
+		border-radius: 0.5em;	
+		float: left;
+		display: inline-block;
+}
+
+
+.lcdlg-line .lcdlg-tag {
+		float: right;
+		font-size: 80%;
+}
+
+.entry-header .entry-thumbnail img {
+	width: 50%;
+	height: auto;
+	float: left;
+	margin-right: 1em;
+    transition: opacity 0.25s ease-out;
+}
+.lcdlg-archive-auteur .entry-header .entry-thumbnail img, 
+.auteur .entry-header .entry-thumbnail img {
+	width: 100%;
+}
+
+.lcdlg-archive .entry-header .entry-thumbnail:hover img,
+.lcdlg-archive-auteur .entry-header .entry-thumbnail:hover img {
+	opacity: 0.7;
+}
+
+
+.son .entry-header h1 {
+		float: right;
+		width: 40%;
+		clear: none;
+		text-align: right;
+}
+.son .entry-content>p {
+		clear: right;
+		padding-left: 46%;
+}
+
+.actualite .entry-header .entry-thumbnail img {
+	float: right;
+	margin-left: 1em;
+	margin-right: 0;
+}
+.actualite .entry-header h1 {
+		float: left;
+		clear: none;
+}
+.actualite .entry-content>p {
+		clear: left;
+		padding-right: 50%;
+}
+.actualite .entry-content audio {
+		float: left;
+}
+
+.lcdlg-portfolio .entry-header .entry-thumbnail img {
+	width: 100%;
+}
+
+.auteur .entry-header .entry-thumbnail {
+		width: 40%;
+		height: auto;
+		float: left;
+}
+
+
+.auteur .entry-header {
+		clear: both;
+}
+.lcdlg-archive-auteur .auteur  .entry-thumbnail {
+	width: 25%;
+}
+.auteur .entry-title {
+		float: right;
+		display: inline-block;
+	clear: none;
+}
+.auteur .entry-content>p {
+		float: left;
+		clear: right;
+		
+}
+
+.auteur .entry-content audio {
+		float: right;
+		clear: right;
+}
+.auteur .entry-content .lcdlg-telecommande {
+		float: right;
+		clear: right;
+}
+
+.contenus-alternatifs ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+}
+
+.lcdlg-search .auteur {
+		background: #eee;
+		padding: 1em;
+}
+
+.lcdlg-search .auteur .entry-summary {
+		display: none;
+}
+.lcdlg-search .entry-title {
+		float: right;
+		clear: right;
+		display: inline-block;
+		width: 45%;
+		text-align: right;
+}
+.lcdlg-search .entry-summary {
+		clear: right;
+}
+
+
+.lcdlg-rss {
+    background: #ff7700; 
+    display: inline-block;
+	float: right;
+	border-radius: 0.4em;
+	padding: 0 0.4em;
+	color: #fff;
+	font-weight: bold;
+	font-size: 120%;
+	text-transform : uppercase;
+}
+.lcdlg-rss:hover {
+    background: #ff9819; 
+	color: #fff;
+}
+.lcdlg-rss>span {
+	background: url("images/rss.svg") top right no-repeat;	
+	background-size: 100% 100%;
+	width: 0.85em;
+	height: 0.85em;
+	display: inline-block;
+	margin-top: 0.1em;
+	margin-left: 0.2em;
+}
+
+@media screen and (max-width : 960px) {
+	.lcdlg-portfolio {
+		overflow: hidden;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+
+}
+
+/** front page */
+
+
+body #lcdlg-bandeau, body footer { 
+	display: block;
+}
+
+body .home-link {
+	margin-top: 0;
+	width: 13em;
+	transition: all 0.1s linear;
+}
+
+body #lcdlg-bandeau {
+	height: 13em;
+	margin-top: 0;
+}
+
+body.home, html {
+	margin: 0px; padding: 0px; 
+	height: 100%;
+}
+
+body.home #masthead {
+		z-index: 10;
+		position: relative;
+}
+
+body.home .home-link {
+	margin-top: -13em;
+	height: 0px;
+	transition: all 0.25s linear;
+}
+
+body.home footer {
+	display: none;
+}
+
+body.home {
+		overflow: hidden;
+}
+
+body.home #page {
+	overflow: hidden;
+	height: 100%;
+	position: relative;
+}
+
+
+#lcdlg-mainmenu {
+		list-style: none;
+		height: 1020px;
+}
+#lcdlg-mainmenu li {
+	display: none;
+}
+
+body.home #lcdlg-mainmenu {
+	background: url("images/front-page.jpg") no-repeat;
+	padding: 0;
+	width: 1092px;
+
+	position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+
+}
+body.home #lcdlg-mainmenu li  {
+	display: block;
+}
+
+body.home #lcdlg-mainmenu a {
+	display: block;
+}
+body.home #lcdlg-mainmenu a span {
+	display: none;
+}
+
+
+#lcdlg-nousgiraphons {
+	position: absolute;
+	top: 247px;
+	left: 26px;
+	width: 561px;
+	height: 129px;
+	z-index: 5;
+}
+#lcdlg-nousgiraphons:hover {
+	background: url("images/nous-giraphons.jpg");
+}
+
+#lcdlg-nosechos {
+	position: absolute;
+	top: 284px;
+	left: 586px;
+	width: 475px;
+	height: 257px;
+	z-index: 5;
+}
+#lcdlg-nosechos:hover {
+	background: url("images/nos-echos.jpg");
+}
+
+#lcdlg-noscris {
+	position: absolute;
+	top: 514px;
+	left: 705px;
+	width: 362px;
+	height: 505px;
+	z-index: 5;
+}
+#lcdlg-noscris:hover {
+	background: url("images/nos-cris.jpg");
+}
+
+@media screen and (max-width : 960px) {
+	body.home #lcdlg-mainmenu {
+		background: url("images/front-page-small.jpg") no-repeat;
+		width: 500px;
+		height: 467px;
+	}
+	
+	#lcdlg-nousgiraphons {
+		top: 112px;
+		left: 5px;
+		width: 266px;
+		height: 59px;
+	}
+	#lcdlg-nousgiraphons:hover {
+		background: url("images/nous-giraphons-small.jpg");
+	}
+
+	#lcdlg-nosechos {
+		top: 127px;
+		left: 264px;
+		width: 220px;
+		height: 123px;
+	}
+	#lcdlg-nosechos:hover {
+		background: url("images/nos-echos-small.jpg");
+	}
+
+	#lcdlg-noscris {
+		top: 228px;
+		left: 319px;
+		width: 167px;
+		height: 239px;
+	}
+	#lcdlg-noscris:hover {
+		background: url("images/nos-cris-small.jpg");
+	}
+
+
+}
+
+/* menu fixe */
+#navbar.lcdlg-menutop {
+	position: fixed;
+	top: 0px;
+	z-index: 9000;
+}
+
+.logged-in #navbar.lcdlg-menutop {
+	top: 32px;
+}
+
+.lcdlg-zero {
+	height: 0;
+}
+
+
+@media screen and (max-width: 782px) {
+	.logged-in #navbar.lcdlg-menutop  {
+			top: 0;
+	}
+
+}
+
+
+/** pour les smartphones */
+
+@media screen and (max-width : 768px) {
+	header {
+			margin-bottom: 0 !important;
+	}
+	.lcdlg-portfolio {
+		overflow: hidden;
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
+	
+	.entry-header .entry-thumbnail img {
+			width: 100%;
+	}
+	.actualite .entry-header h1, .son  .entry-header h1 {
+			width: 100%;
+			text-align: left;
+	}
+	
+	.actualite .entry-content>p, .son .entry-content>p {
+		clear: both;
+		padding: 0;
+	}
+	
+
+}
+
+@media only screen and (max-width: 768px) {
+	.site-main .content-area {
+		border-bottom: 0 !important;
+		margin-bottom: 0 !important;
+		padding-bottom: 0;
+	}
+}
+
+#breadcrumbs{
+    list-style:none;
+    margin:0;
+    overflow:hidden;
+	padding: 0;
+}
+  
+#breadcrumbs li {
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:0.2em;
+}
+  
+#breadcrumbs .separator {
+    font-weight:100;
+    color:#ccc;
+}
+
+button#lcdlg-toggle-filter {
+		display: none;
+		margin-top: 0;
+		background: #fff;
+		border-top: 1px solid black;
+}
+body.lcdlg-filter-off .beautiful-taxonomy-filters {
+	display: none;
+}
+
+
+@media screen and (max-width : 768px) {
+
+	.beautiful-taxonomy-filters {
+			margin: 0 0 2em 0;
+	}
+	button#lcdlg-toggle-filter {
+		float: right;
+		margin-right: 0;
+		border-top: 0;
+		margin-bottom: 1em;
+		display: block;
+		background: default;
+	}
+}
+#wpadminbar #wp-admin-bar-edit {
+	display: none !important;
+}
+
+
+#lcdlg-serie {
+		float: right;
+}
+#lcdlg-serie .lcdlg-tag {
+	float: left;
+}
+
+#lcdlg-serie .lcdlg-premier {
+	margin-right: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+#lcdlg-serie .lcdlg-dernier {
+	margin-left: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+#lcdlg-serie a {
+	border: 0;
+}
+.lcdlg-desactive {
+		background: #ccc;
+}
+
+#tertiary .search-field {
+	background: #f7f7f7; 
+}
+#tertiary .search-field:focus {
+	background: #fff;
+}
+
+/**** BANDEAU BAS ****/
+
+.lcdlg-hidden {
+		display: none;
+}
+
+#lcdlg-bandeaubas {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #999999;
+	z-index: 9000;
+}
+
+#lcdlg-bb-c-texte {
+	background: #666666;
+}
+
+.zaback.with-bb {
+		bottom: 100px;
+}
+.site-info-container.with-bb {
+		padding-bottom: 60px;
+}
+#lcdlg-bb-container {
+	margin: auto;
+	width: 960px;
+	background: #404040;
+	height: 60px;
+	padding: 0;
+}
+.lcdlg-bb-bloc, .lcdlg-bb-bloc-5, .lcdlg-bb-bloc-11 {
+		width: 80px;
+		height: 60px;
+		float: left;
+		margin: 0;
+}
+.lcdlg-bb-bloc-5 {
+		width: 400px;
+		background: #999999;
+}
+.lcdlg-bb-bloc-11 {
+		width: 880px;
+}
+
+@media screen and (max-width : 960px) {
+	#lcdlg-bb-container {
+			width: 728px;
+			height: 50px;
+	}
+	.lcdlg-bb-bloc {
+			height: 50px;
+			width: 60px;
+	}
+	.lcdlg-bb-bloc-5 {
+			height: 50px;
+			width: 300px;
+	}
+	.lcdlg-bb-bloc-11 {
+			height: 50px;
+			width: 668px; /* 60*11+8 */
+	}
+
+	.zaback.with-bb {
+		bottom: 60px;
+	}
+	.site-info-container.with-bb {
+		padding-bottom: 40px;
+	}
+}
+
+#lcdlg-bb-open {
+	display: none;
+}
+#lcdlg-bb-c-player {
+		background-size: cover !important;
+}
+	
+@media only screen and (max-width: 767px) {
+	#lcdlg-bandeaubas {
+		background: #404040;
+	}
+	#lcdlg-bb-container {
+			width: 100%;
+			height: auto;
+			background: #404040;
+			padding: 0;
+			display: block;
+	}
+	#lcdlg-bb-open {
+		display: block;
+		float: right;
+		width: 2.5em;
+		color: #fff;
+		padding: 1.1em .5em;
+		font-weight: 400;
+		line-height: 1;
+		text-align: center;
+		height: 3em;
+	}
+	.zaback.with-bb {
+		bottom: calc(20px + 3em);
+	}
+	.site-info-container.with-bb {
+		padding-bottom: 2rem;
+	}
+	
+	#lcdlg-bb-c-1, #lcdlg-bb-c-2, #lcdlg-bb-c-9, #lcdlg-bb-c-10, #lcdlg-bb-c-11, #lcdlg-bb-c-12 {
+		display: none;
+	}
+	#lcdlg-bb-c-player {
+		width: 3em;
+		height: 3em;
+	}
+	#lcdlg-bb-c-texte {
+		height: 3em;
+		width: calc(100% - 2.5em - 3em);
+	}
+}
+
+/*** les télécommandes */
+
+.lcdlg-telecommande {
+		margin: 1em 0;
+		display: block;
+		width: 40em;
+		float: left;
+		clear: both;
+		border-radius: 0.4em;
+		position: relative;
+		overflow: hidden;
+		
+}
+@media only screen and (max-width: 767px) {
+	.lcdlg-telecommande {
+		width: 100%;
+		font-size: 80%;
+	}
+}
+.lcdlg-paused .lcdlg-t-pause,  .lcdlg-playing .lcdlg-t-play {
+		display: none;
+}
+
+
+.lcdlg-telecommande button span {
+		display: none;
+}
+.lcdlg-telecommande button {
+		height: 4em;
+		width: 4em;
+		float: left;
+		background: #ccc;
+		border: 0;
+		padding: 0;
+		margin: 0;
+}
+.lcdlg-telecommande .lcdlg-t-playlist {
+		position: absolute;
+		right: 4em;
+		top: 0;
+		display: none; /* TODO: à remettre */
+}
+.lcdlg-telecommande .lcdlg-t-telecharger {
+		position: absolute;
+		right: 0em;
+		top: 0;
+}
+.lcdlg-telecommande .lcdlg-t-texte {
+		height: 4em;
+		top: 0;
+		right: 0;
+		padding-left: 4em;
+		padding-right: 0;
+		width: 100%;
+		color: #fff;
+}
+
+.lcdlg-telecommande.lcdlg-withdl .lcdlg-t-texte {
+	padding-right: 4em;
+}
+
+/*.lcdlg-telecommande .lcdlg-t-texte:hover {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		padding-right: 0em;
+		z-index: 2;
+		transition: all 0.1s linear;
+		cursor: default;
+}*/
+.lcdlg-telecommande .lcdlg-t-nom {
+		float: left;
+		height: 2.5em;
+		width: 100%;
+		text-align: left;
+		line-height: 2.5em;
+		padding: 0 0.5em;
+		overflow: hidden;
+		background: #888;
+}
+.lcdlg-telecommande .lcdlg-t-nom span {
+	font-size: 120%;
+	font-weight: bold;
+}	
+.lcdlg-telecommande .lcdlg-t-duration {
+		background: #888;
+		float: left;
+		height: 1.5em;
+		width: 100%;
+		text-align: right;
+		line-height: 1.5em;
+		padding: 0 0.5em;
+}
+
+.lcdlg-telecommande .lcdlg-t-playlist {
+		background: #ccc url("images/playlist.svg") no-repeat center center;
+		background-size: cover;
+		transition: opacity 0.3s linear;
+		z-index: 20;
+}
+
+.lcdlg-telecommande .lcdlg-t-play {
+		background: #ccc url("images/play.svg") no-repeat center center;
+		background-size: cover;
+		transition: opacity 0.3s linear;
+		z-index: 20;
+}
+.lcdlg-telecommande .lcdlg-t-play:hover,
+.lcdlg-telecommande .lcdlg-t-pause:hover,
+.lcdlg-telecommande .lcdlg-t-playlist:hover,
+.lcdlg-telecommande .lcdlg-t-telecharger:hover {
+	opacity: 0.8;
+	transition: all 0.3s linear;
+}
+
+.lcdlg-telecommande .lcdlg-t-pause {
+		background: #ccc url("images/pause.svg") no-repeat center center;
+		background-size: cover;
+		transition: opacity 0.3s linear;
+		z-index: 20;
+}
+
+.lcdlg-telecommande .lcdlg-t-telecharger {
+		background: #ccc url("images/dl.svg") no-repeat center center;
+		background-size: cover;
+		transition: opacity 0.3s linear;
+		z-index: 20;
+}
+
+#jp-play span {
+		background: url("images/play.svg") no-repeat center center;
+		filter: drop-shadow( 0 0 0.2em #000 );
+		opacity: 0.9;
+}
+
+#jp-pause span {
+		background: url("images/pause.svg") no-repeat center center;
+		filter: drop-shadow( 0 0 0.2em #000 );
+		opacity: 0.9;
+}
+#jp-play, #jp-pause, #jp-play span, #jp-pause span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+}
+#jp-play, #jp-pause {
+	padding: 0 7%;
+	border: 0;
+}
+#jp-play span, #jp-pause span {
+	overflow: hidden;
+    text-indent: -9999px;
+}
+
+#jp-play.lcdlg-hidden, #jp-pause.lcdlg-hidden, #jp-title.lcdlg-hidden, #jp-time.lcdlg-hidden {
+	display: none !important;
+}
+
+#jp-title {
+	height: 45%;
+	display: block;
+	font-weight: bold;
+	font-size: 120%;
+	padding-left: 1em;
+	padding-top: .2em;
+	color: #fff;
+	overflow: hidden;
+}
+#jp-title a {
+	color: #fff;
+}
+
+#jp-time .jp-progress {
+	margin: 0 1em;
+}
+#jp-time .jp-seek-bar {
+	border-radius: .5em;
+	overflow: hidden;
+	background: #aaa;
+	cursor: pointer;
+}
+#jp-time .jp-play-bar {
+	background: #fff;
+	height: 1em;
+	cursor: pointer;
+}
+#jp-time .jp-current-time {
+	color: #fff;
+	margin-left: 1em;
+	float: left;
+}
+#jp-time .jp-duration {
+	color: #fff;
+	margin-right: 1em;
+	float: right;
+}
+
+@media only screen and (max-width: 960px) {
+	#jp-title {
+		font-size: 100%;
+		height: 50%;
+	}
+	#jp-time .jp-play-bar {
+		height: .6em;
+	}
+	#jp-time .jp-current-time, #jp-time .jp-duration {
+		margin-top: -0.1em;
+		font-size: 80%;
+	}
+}
+@media only screen and (max-width: 768px) {
+	#jp-time .jp-current-time, #jp-time .jp-duration {
+		display: none;
+	}
+	#jp-time .jp-progress {
+		display: block;
+		height: 6px;
+		margin: 0;
+	}
+	#jp-time .jp-seek-bar {
+		border-radius: 0;
+	}
+	#jp-title {
+		height: calc(100% - 6px);
+		font-size: 100%;
+		width: 100%;
+	}
+	#jp-play span {
+			filter: drop-shadow( 0 0 0.1em #000 );
+	}
+
+	#jp-pause span {
+			filter: drop-shadow( 0 0 0.1em #000 );
+	}
+}
+
+/* player caché */
+#player-cache {
+	display: none;
+}
+
+/* entête auteurs */
+
+.lcdlg-main-image img {
+	width: 100%;
+	height: auto;
+}
+
+.lcdlg-date {
+		color: #888;
+		margin-top: -0.5em;
+		font-size: 110%;
+}
