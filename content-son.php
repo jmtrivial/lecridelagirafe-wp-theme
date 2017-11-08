@@ -12,12 +12,6 @@
 		<?php if ( is_single() ) : ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 
-			<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-			<div class="entry-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div>
-			<?php endif; ?>
-			
 		<?php else : ?>
 			<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 			<div class="entry-thumbnail">

@@ -12,6 +12,33 @@
  Text Domain:  le-cri-de-la-girafe
 */
 
+.site-header {
+		background-color: #676b08;
+}
+.site-description {
+		color: #fff;
+}
+.site-title {
+		padding-top: 3rem;
+}
+
+.site-header .search-field:hover {
+	background-color: #202100 !important;
+	color: #fff;
+}
+
+
+@media screen and (max-width : 960px) {
+	.site-title {
+		font-size: 400%;
+	}
+}
+
+@media screen and (max-width : 480px) {
+	.site-title {
+		font-size: 300%;
+	}
+}
 
 /** nos échos et nos cris */
 .lcdlg-archive article {
@@ -101,15 +128,14 @@ h1 .lcdlg-tag {
 
 .lcdlg-line {
 		padding: 0.2em 1em;
-		background: #fff;
-		border-bottom: 1px solid #404040;
+		border-bottom: 1px solid #2d1000;
 		display: block;
 		min-height: 5em;
 		margin: 0.8em 0;
 }
 
 .lcdlg-line:hover {
-		background: #f8f8f8;
+		background: #f0ece8;
 }
 
 .lcdlg-line>span {
@@ -139,9 +165,15 @@ h1 .lcdlg-tag {
 		font-size: 80%;
 }
 
-.entry-header .entry-thumbnail img {
+.son .lcdlg-telecommande {
+		clear: none;
+		width: 50%;
+}
+
+.son .entry-thumbnail img {
 	width: 50%;
 	height: auto;
+	clear: both;
 	float: left;
 	margin-right: 1em;
     transition: opacity 0.25s ease-out;
@@ -156,6 +188,9 @@ h1 .lcdlg-tag {
 	opacity: 0.7;
 }
 
+.son .sources {
+		clear: both;
+}
 
 .son .entry-header h1 {
 		float: right;
@@ -163,9 +198,21 @@ h1 .lcdlg-tag {
 		clear: none;
 		text-align: right;
 }
-.son .entry-content>p {
+.son .entry-content>p,
+.son .lcdlg-content {
 		clear: right;
 		padding-left: 46%;
+		padding-top: 2.5em;
+}
+
+.actualite .entry-header .entry-thumbnail {
+		width: 50%;
+		float: right;
+		clear: both;
+}
+
+.lcdlg-archive .actualite .entry-header .entry-thumbnail {
+		width: 100%;
 }
 
 .actualite .entry-header .entry-thumbnail img {
@@ -177,7 +224,8 @@ h1 .lcdlg-tag {
 		float: left;
 		clear: none;
 }
-.actualite .entry-content>p {
+.actualite .entry-content>p,
+.actualite .lcdlg-content {
 		clear: left;
 		padding-right: 50%;
 }
@@ -207,10 +255,15 @@ h1 .lcdlg-tag {
 		display: inline-block;
 	clear: none;
 }
-.auteur .entry-content>p {
+.auteur .entry-content>p,
+.auteur .lcdlg-content {
 		float: left;
 		clear: right;
-		
+		padding: 3em;
+}
+
+.lcdlg-archive-auteur .auteur .lcdlg-content {
+		padding: 3em 0;
 }
 
 .auteur .entry-content audio {
@@ -221,6 +274,7 @@ h1 .lcdlg-tag {
 		float: right;
 		clear: right;
 }
+
 
 .contenus-alternatifs ul {
 		list-style: none;
@@ -304,6 +358,7 @@ body #lcdlg-bandeau {
 body.home, html {
 	margin: 0px; padding: 0px; 
 	height: 100%;
+	background: #fffbf6;
 }
 
 body.home #masthead {
@@ -442,11 +497,28 @@ body.home #lcdlg-mainmenu a span {
 }
 
 /* menu fixe */
+#navbar {
+	background-color: #2b2d00;
+}
+
+.nav-menu .current_page_item > a, .nav-menu .current_page_ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a { 
+		background: #181900;
+}
+.nav-menu li:hover > a, .nav-menu li a:hover { 
+		background: #202100;	
+}
+
 #navbar.lcdlg-menutop {
 	position: fixed;
 	top: 0px;
 	z-index: 9000;
 }
+
+.menu-toggle {
+	background-color: #202100 !important;
+	color: #fff;
+}
+
 
 .logged-in #navbar.lcdlg-menutop {
 	top: 32px;
@@ -477,8 +549,13 @@ body.home #lcdlg-mainmenu a span {
 		-moz-column-count: 1;
 		column-count: 1;
 	}
+	.son .lcdlg-telecommande {
+			width: 100%;
+	}
 	
-	.entry-header .entry-thumbnail img {
+	.actualite .entry-header .entry-thumbnail,
+	.son .entry-thumbnail,
+	.son .entry-thumbnail img {
 			width: 100%;
 	}
 	.actualite .entry-header h1, .son  .entry-header h1 {
@@ -486,7 +563,8 @@ body.home #lcdlg-mainmenu a span {
 			text-align: left;
 	}
 	
-	.actualite .entry-content>p, .son .entry-content>p {
+	.actualite .entry-content>p, .son .entry-content>p,
+	.actualite .entry-content .lcdlg-content, .son .entry-content .lcdlg-content {
 		clear: both;
 		padding: 0;
 	}
@@ -592,12 +670,12 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: #999999;
+	background: #676b08;
 	z-index: 9000;
 }
 
 #lcdlg-bb-c-texte {
-	background: #666666;
+	background: #2b2d00;
 }
 
 .zaback.with-bb {
@@ -609,7 +687,7 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 #lcdlg-bb-container {
 	margin: auto;
 	width: 960px;
-	background: #404040;
+	background: #2d1000;
 	height: 60px;
 	padding: 0;
 }
@@ -621,7 +699,7 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 }
 .lcdlg-bb-bloc-5 {
 		width: 400px;
-		background: #999999;
+		background: #2b2d00;
 }
 .lcdlg-bb-bloc-11 {
 		width: 880px;
@@ -661,13 +739,16 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 }
 	
 @media only screen and (max-width: 767px) {
+	.toggled-on .nav-menu li a:hover, .toggled-on .nav-menu ul a:hover  {
+			background-color: #202100;
+	}
 	#lcdlg-bandeaubas {
-		background: #404040;
+		background: #2b2d00;
 	}
 	#lcdlg-bb-container {
 			width: 100%;
 			height: auto;
-			background: #404040;
+			background: #2d1000;
 			padding: 0;
 			display: block;
 	}
@@ -733,7 +814,7 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 		height: 4em;
 		width: 4em;
 		float: left;
-		background: #ccc;
+		background: #676b08;
 		border: 0;
 		padding: 0;
 		margin: 0;
@@ -782,14 +863,14 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 		line-height: 2.5em;
 		padding: 0 0.5em;
 		overflow: hidden;
-		background: #888;
+		background: #505306;
 }
 .lcdlg-telecommande .lcdlg-t-nom span {
 	font-size: 120%;
 	font-weight: bold;
 }	
 .lcdlg-telecommande .lcdlg-t-duration {
-		background: #888;
+		background: #505306;
 		float: left;
 		height: 1.5em;
 		width: 100%;
@@ -799,14 +880,14 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 }
 
 .lcdlg-telecommande .lcdlg-t-playlist {
-		background: #ccc url("images/playlist.svg") no-repeat center center;
+		background: #676b08 url("images/playlist.svg") no-repeat center center;
 		background-size: cover;
 		transition: opacity 0.3s linear;
 		z-index: 20;
 }
 
 .lcdlg-telecommande .lcdlg-t-play {
-		background: #ccc url("images/play.svg") no-repeat center center;
+		background: #676b08 url("images/play.svg") no-repeat center center;
 		background-size: cover;
 		transition: opacity 0.3s linear;
 		z-index: 20;
@@ -820,14 +901,14 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 }
 
 .lcdlg-telecommande .lcdlg-t-pause {
-		background: #ccc url("images/pause.svg") no-repeat center center;
+		background: #676b08 url("images/pause.svg") no-repeat center center;
 		background-size: cover;
 		transition: opacity 0.3s linear;
 		z-index: 20;
 }
 
 .lcdlg-telecommande .lcdlg-t-telecharger {
-		background: #ccc url("images/dl.svg") no-repeat center center;
+		background: #676b08 url("images/dl.svg") no-repeat center center;
 		background-size: cover;
 		transition: opacity 0.3s linear;
 		z-index: 20;
@@ -885,7 +966,7 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 #jp-time .jp-seek-bar {
 	border-radius: .5em;
 	overflow: hidden;
-	background: #aaa;
+	background: #505306;
 	cursor: pointer;
 }
 #jp-time .jp-play-bar {
