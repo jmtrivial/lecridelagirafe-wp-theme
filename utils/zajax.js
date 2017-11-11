@@ -334,7 +334,7 @@
     var E = a.split(","),
         F = location.origin,
         g = "",
-        a = "a[href^='" + F + "']:not(a[href*='/wp-']):not([href$='/feed']):not([href$='/feed/podcasts]):not(.no-ajax)",
+        a = "a[href^='" + F + "']:not(a[href*='/wp-']):not([href$='/feed']):not([href$='/feed/podcasts']):not(.no-ajax)",
         x, D = 0;
     b(document).on("mouseover", a, function() {
         c || 1 !== C || (g = this.href, D = new Date, x = setTimeout(function() {

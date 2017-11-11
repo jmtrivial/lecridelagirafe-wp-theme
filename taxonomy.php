@@ -23,6 +23,7 @@ $term_name = get_term_by( 'slug', $term, $taxonomy );
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
+					<a href="<?php echo get_term_link($term_name);?>/feed/podcasts" class="lcdlg-podcasts">podcasts <span class="logo" /></a>
 					<a href="<?php echo get_term_link($term_name);?>/feed" class="lcdlg-rss">rss <span class="logo" /></a>
 
 				<h1 class="archive-title" style="clear: none">Archives 
