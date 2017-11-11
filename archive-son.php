@@ -17,6 +17,7 @@ get_header(); ?>
 		
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
+				<a href="/sons/feed/podcasts" class="lcdlg-podcasts">podcasts <span class="logo" /></a>
 				<a href="/sons/feed" class="lcdlg-rss">rss  <span class="logo" /></a>
 				<h1 class="archive-title" style="clear: none">Nos cris <small>Productions sonores et radiophoniques</small></h1>
 				<?php
