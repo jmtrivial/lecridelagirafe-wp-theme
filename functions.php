@@ -1,4 +1,261 @@
 <?php
+
+                                                                                                                                                                                             
+function lcdlg_color_customizer($wp_customize){                                                                                                                                              
+
+		$wp_customize->add_section( 'couleurs_bandeau', array(
+			'title'          => 'LCDLG - Haut de page'
+    	 ));                                                                                                                                                         
+		$wp_customize->add_section( 'couleurs_player_fixe', array(
+			'title'          => 'LCDLG - Lecteur fixe'
+    	 ));                                                                                                                                                         
+		$wp_customize->add_section( 'couleurs_player_page', array(
+			'title'          => 'LCDLG - Lecteurs de page'
+    	 ));                                                                                                                                                         
+		$wp_customize->add_section( 'premiere_page', array(
+			'title'          => 'LCDLG - Première page'
+    	 )); 
+
+    	 
+		$wp_customize->add_setting('lcdlg-image-premiere-page', array(
+        'default'           => get_stylesheet_directory_uri() . '/images/front-page.jpg',
+        'capability'        => 'edit_theme_options',
+        'type'           => 'option',
+		));
+		
+		 $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'lcdlg-image-premiere-page', array(
+			'label'    => "Image de la première page",
+			'section'  => 'premiere_page',
+			'settings' => 'lcdlg-image-premiere-page',
+		))); 
+    	 
+        $wp_customize->add_setting( 'masthead_color' , array(                                                                                                                                
+                'default' => '#676b08',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'masthead_color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond de l'entête",                                                                                                                       
+                        'section'    => 'couleurs_bandeau',                                                                                                                                          
+                        'settings'   => 'masthead_color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );       
+        
+        $wp_customize->add_setting( 'menu_bg_color' , array(                                                                                                                                
+                'default' => '#2b2d00',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'menu_bg_color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond du menu",                                                                                                                       
+                        'section'    => 'couleurs_bandeau',                                                                                                                                          
+                        'settings'   => 'menu_bg_color',                                                                                                                                    
+                ) )
+        );       
+        
+        $wp_customize->add_setting( 'menu_bg_active_color' , array(                                                                                                                                
+                'default' => '#181900',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'menu_bg_active_color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond du menu actif",                                                                                                                       
+                        'section'    => 'couleurs_bandeau',                                                                                                                                          
+                        'settings'   => 'menu_bg_active_color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );        
+
+		$wp_customize->add_setting( 'menu_bg_survol_color' , array(                                                                                                                                
+                'default' => '#202100',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'menu_bg_survol_color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond du menu au survol",                                                                                                                       
+                        'section'    => 'couleurs_bandeau',                                                                                                                                          
+                        'settings'   => 'menu_bg_survol_color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        ); 
+        
+		$wp_customize->add_setting( 'telecommande-main-bg-color' , array(                                                                                                                                
+                'default' => '#505306',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'telecommande-main-bg-color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond principal",                                                                                                                       
+                        'section'    => 'couleurs_player_page',                                                                                                                                          
+                        'settings'   => 'telecommande-main-bg-color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        ); 
+
+		$wp_customize->add_setting( 'telecommande-main-txt-color' , array(                                                                                                                                
+                'default' => '#ffffff',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'telecommande-main-txt-color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de texte",                                                                                                                       
+                        'section'    => 'couleurs_player_page',                                                                                                                                          
+                        'settings'   => 'telecommande-main-txt-color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        ); 
+        
+		$wp_customize->add_setting( 'telecommande-button-bg-color' , array(                                                                                                                                
+                'default' => '#676b08',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'telecommande-button-bg-color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond des boutons",                                                                                                                       
+                        'section'    => 'couleurs_player_page',                                                                                                                                          
+                        'settings'   => 'telecommande-button-bg-color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        ); 
+        
+		$wp_customize->add_setting( 'telecommande-button-bg-active-color' , array(                                                                                                                                
+                'default' => '#787c09',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'telecommande-button-bg-active-color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond des boutons actifs",                                                                                                                       
+                        'section'    => 'couleurs_player_page',                                                                                                                                          
+                        'settings'   => 'telecommande-button-bg-active-color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );
+        
+        $wp_customize->add_setting( 'lcdlg-bandeaubas-bg-color-sides' , array(                                                                                                                                
+                'default' => '#676b08',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'lcdlg-bandeaubas-bg-color-sides',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond des côtés du bandeau bas",                                                                                                                       
+                        'section'    => 'couleurs_player_fixe',                                                                                                                                          
+                        'settings'   => 'lcdlg-bandeaubas-bg-color-sides',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );
+        
+		$wp_customize->add_setting( 'lcdlg-bandeaubas-bg-color' , array(                                                                                                                                
+                'default' => '#2b2d00',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'lcdlg-bandeaubas-bg-color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond du bandeau bas",                                                                                                                       
+                        'section'    => 'couleurs_player_fixe',                                                                                                                                          
+                        'settings'   => 'lcdlg-bandeaubas-bg-color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );
+        
+		$wp_customize->add_setting( 'lcdlg-bandeaubas-title-color' , array(                                                                                                                                
+                'default' => '#ffffff',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'lcdlg-bandeaubas-title-color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur du titre",                                                                                                                       
+                        'section'    => 'couleurs_player_fixe',                                                                                                                                          
+                        'settings'   => 'lcdlg-bandeaubas-title-color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );
+        
+		$wp_customize->add_setting( 'lcdlg-bandeaubas-bar-color-fond' , array(                                                                                                                                
+                'default' => '#505306',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'lcdlg-bandeaubas-bar-color-fond',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond de la barre de progression",                                                                                                                       
+                        'section'    => 'couleurs_player_fixe',                                                                                                                                          
+                        'settings'   => 'lcdlg-bandeaubas-bar-color-fond',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );
+        
+			$wp_customize->add_setting( 'lcdlg-bandeaubas-bar-color-progress' , array(                                                                                                                                
+                'default' => '#ffffff',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'lcdlg-bandeaubas-bar-color-progress',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur de fond de la barre de progression",                                                                                                                       
+                        'section'    => 'couleurs_player_fixe',                                                                                                                                          
+                        'settings'   => 'lcdlg-bandeaubas-bar-color-progress',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );
+        
+		$wp_customize->add_setting( 'lcdlg-bandeaubas-time-color' , array(                                                                                                                                
+                'default' => '#ffffff',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'lcdlg-bandeaubas-time-color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur des durées",                                                                                                                       
+                        'section'    => 'couleurs_player_fixe',                                                                                                                                          
+                        'settings'   => 'lcdlg-bandeaubas-time-color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );
+}                                                                                                                                                                                            
+add_action('customize_register', 'lcdlg_color_customizer');
+
+
 function lcdlg_enqueue_styles() {
 
     $parent_style = 'suits-style'; 

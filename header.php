@@ -20,6 +20,73 @@
 	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/common.js"></script>
 	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/player.js"></script>
 	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/jquery.jplayer.js"></script>
+	<style type="text/css">
+		.site-header {
+			background-color: <?php echo get_theme_mod('masthead_color'); ?>;
+		}
+		#navbar {
+			background-color: <?php echo get_theme_mod('menu_bg_color'); ?>;
+		}
+		.nav-menu .current_page_item > a, .nav-menu .current_page_ancestor > a, .nav-menu .current-menu-item > a, .nav-menu .current-menu-ancestor > a {
+			background-color: <?php echo get_theme_mod('menu_bg_color_active'); ?>;
+		}
+		.nav-menu li:hover > a, .nav-menu li a:hover { 
+			background-color: <?php echo get_theme_mod('menu_bg_survol_color'); ?>;
+		}
+		
+		.menu-toggle {
+			background-color: <?php echo get_theme_mod('menu_bg_survol_color'); ?> !important;
+			color: #fff;
+		}
+		
+		.site-header .search-field:hover {
+			background-color: <?php echo get_theme_mod('menu_bg_survol_color'); ?> !important;
+			color: #fff;
+		}
+
+		.lcdlg-telecommande .lcdlg-t-nom,
+		.lcdlg-telecommande .lcdlg-t-duration {
+			background-color: <?php echo get_theme_mod('telecommande-main-bg-color'); ?>;
+			color: <?php echo get_theme_mod('telecommande-main-txt-color'); ?>;
+		}
+		
+		.lcdlg-telecommande .lcdlg-t-playlist,
+		.lcdlg-telecommande .lcdlg-t-play,
+		.lcdlg-telecommande .lcdlg-t-pause,
+		.lcdlg-telecommande .lcdlg-t-telecharger {
+			background-color: <?php echo get_theme_mod('telecommande-button-bg-color'); ?>;
+		}
+		.lcdlg-telecommande .lcdlg-t-play:hover,
+		.lcdlg-telecommande .lcdlg-t-pause:hover,
+		.lcdlg-telecommande .lcdlg-t-playlist:hover,
+		.lcdlg-telecommande .lcdlg-t-telecharger:hover {
+			background-color: <?php echo get_theme_mod('telecommande-button-bg-active-color'); ?>;
+		}
+		
+		body.home #lcdlg-mainmenu {
+			background: url('<?php echo esc_url( get_option('lcdlg-image-premiere-page') ); ?>') no-repeat;
+		}
+		
+		#lcdlg-bandeaubas {
+			background: <?php echo esc_url( get_option('lcdlg-bandeaubas-bg-color-sides') ); ?>/*#676b08*/;
+		}
+		#lcdlg-bb-c-texte {
+			background: <?php echo esc_url( get_option('lcdlg-bandeaubas-bg-color') ); ?>/*#2b2d00*/;
+		}
+		#jp-title, #jp-title a {
+			color:  <?php echo esc_url( get_option('lcdlg-bandeaubas-title-color') ); ?>/*#fff*/;
+		}
+		#jp-time .jp-seek-bar {
+			background: <?php echo esc_url( get_option('lcdlg-bandeaubas-bar-color-fond') ); ?>/*#505306*/;
+		}
+		#jp-time .jp-play-bar {
+			background: <?php echo esc_url( get_option('lcdlg-bandeaubas-bar-color-progress') ); ?>/*#fff*/;
+		}
+		#jp-time .jp-current-time,
+		#jp-time .jp-duration {
+			color: <?php echo esc_url( get_option('lcdlg-bandeaubas-time-color') ); ?>/*#fff*/;
+		}
+	</style>
 </head>
 
 <body <?php body_class(); ?>>
