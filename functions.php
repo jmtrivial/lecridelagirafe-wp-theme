@@ -351,6 +351,27 @@ function show_post($path) {
 }
 
 
+function my_custom_rss_init(){
+	add_feed('podcasts', 'my_custom_rss');
+}
+add_action('init', 'my_custom_rss_init');
+
+/* Filter the type, this hook wil set the correct HTTP header for Content-type. */
+function my_custom_rss_content_type( $content_type, $type ) {
+	if ( 'podcasts' === $type ) {
+		return feed_content_type( 'rss2' );
+	}
+	return $content_type;
+}
+add_filter( 'feed_content_type', 'my_custom_rss_content_type', 10, 2 );
+
+/* Show the RSS Feed on domain.com/?feed=podcasts or domain.com/feed/podcasts. */
+function my_custom_rss() {
+	get_template_part( 'feed', 'podcasts' );
+}
+//$wp_rewrite->flush_rules( $hard );
+
+
 // Breadcrumbs
 function custom_breadcrumbs() {
        
