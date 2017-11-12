@@ -41,7 +41,14 @@ get_header();
 			</div>
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content-auteur', get_post_format() ); ?>
+				<?php 
+					$pod = pods( 'auteur', $post->ID );
+					$related = $pod->field( 'visible' );
+					if ( ! empty( $related ) && $related) {
+						get_template_part( 'content-auteur', get_post_format() ); 
+						}
+					
+				?>
 			<?php endwhile; ?>
 
 			<?php suits_paging_nav(); ?>

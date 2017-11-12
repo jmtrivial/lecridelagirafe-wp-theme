@@ -146,6 +146,14 @@ h1 .lcdlg-tag {
 		background: #f0ece8;
 }
 
+span.lcdlg-line { 
+		cursor: default;
+}
+span.lcdlg-line:hover {
+		background: none;
+}
+
+
 .lcdlg-line>span {
 		display: inline-block;
 		margin-top: 1.6em;
