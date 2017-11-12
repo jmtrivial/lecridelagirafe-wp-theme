@@ -646,6 +646,7 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 
 #lcdlg-serie {
 		float: right;
+		margin-bottom: 1.8em;
 }
 #lcdlg-serie .lcdlg-tag {
 	float: left;

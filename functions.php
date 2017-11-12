@@ -157,7 +157,7 @@ function lcdlg_color_customizer($wp_customize){
                 ) )                                                                                                                                                                          
         );
         
-        $wp_customize->add_setting( 'lcdlg-bandeaubas-bg-color-sides' , array(                                                                                                                                
+        $wp_customize->add_setting( 'bandeaubas-bg-color-sides' , array(                                                                                                                                
                 'default' => '#676b08',                                                                                                                                                      
                 'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
         ));                                                                                                                                                                                  
@@ -165,15 +165,15 @@ function lcdlg_color_customizer($wp_customize){
         $wp_customize->add_control(                                                                                                                                                          
                 new WP_Customize_Color_Control(                                                                                                                                              
                 $wp_customize,                                                                                                                                                               
-                'lcdlg-bandeaubas-bg-color-sides',                                                                                                                                                                
+                'bandeaubas-bg-color-sides',                                                                                                                                                                
                 array(                                                                                                                                                                       
                         'label'      => "Couleur de fond des côtés du bandeau bas",                                                                                                                       
                         'section'    => 'couleurs_player_fixe',                                                                                                                                          
-                        'settings'   => 'lcdlg-bandeaubas-bg-color-sides',                                                                                                                                    
+                        'settings'   => 'bandeaubas-bg-color-sides',                                                                                                                                    
                 ) )                                                                                                                                                                          
         );
         
-		$wp_customize->add_setting( 'lcdlg-bandeaubas-bg-color' , array(                                                                                                                                
+		$wp_customize->add_setting( 'bandeaubas-bg-color' , array(                                                                                                                                
                 'default' => '#2b2d00',                                                                                                                                                      
                 'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
         ));                                                                                                                                                                                  
@@ -181,15 +181,15 @@ function lcdlg_color_customizer($wp_customize){
         $wp_customize->add_control(                                                                                                                                                          
                 new WP_Customize_Color_Control(                                                                                                                                              
                 $wp_customize,                                                                                                                                                               
-                'lcdlg-bandeaubas-bg-color',                                                                                                                                                                
+                'bandeaubas-bg-color',                                                                                                                                                                
                 array(                                                                                                                                                                       
                         'label'      => "Couleur de fond du bandeau bas",                                                                                                                       
                         'section'    => 'couleurs_player_fixe',                                                                                                                                          
-                        'settings'   => 'lcdlg-bandeaubas-bg-color',                                                                                                                                    
+                        'settings'   => 'bandeaubas-bg-color',                                                                                                                                    
                 ) )                                                                                                                                                                          
         );
         
-		$wp_customize->add_setting( 'lcdlg-bandeaubas-title-color' , array(                                                                                                                                
+		$wp_customize->add_setting( 'bandeaubas-title-color' , array(                                                                                                                                
                 'default' => '#ffffff',                                                                                                                                                      
                 'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
         ));                                                                                                                                                                                  
@@ -197,15 +197,15 @@ function lcdlg_color_customizer($wp_customize){
         $wp_customize->add_control(                                                                                                                                                          
                 new WP_Customize_Color_Control(                                                                                                                                              
                 $wp_customize,                                                                                                                                                               
-                'lcdlg-bandeaubas-title-color',                                                                                                                                                                
+                'bandeaubas-title-color',                                                                                                                                                                
                 array(                                                                                                                                                                       
                         'label'      => "Couleur du titre",                                                                                                                       
                         'section'    => 'couleurs_player_fixe',                                                                                                                                          
-                        'settings'   => 'lcdlg-bandeaubas-title-color',                                                                                                                                    
+                        'settings'   => 'bandeaubas-title-color',                                                                                                                                    
                 ) )                                                                                                                                                                          
         );
         
-		$wp_customize->add_setting( 'lcdlg-bandeaubas-bar-color-fond' , array(                                                                                                                                
+		$wp_customize->add_setting( 'bandeaubas-bar-color-fond' , array(                                                                                                                                
                 'default' => '#505306',                                                                                                                                                      
                 'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
         ));                                                                                                                                                                                  
@@ -213,15 +213,15 @@ function lcdlg_color_customizer($wp_customize){
         $wp_customize->add_control(                                                                                                                                                          
                 new WP_Customize_Color_Control(                                                                                                                                              
                 $wp_customize,                                                                                                                                                               
-                'lcdlg-bandeaubas-bar-color-fond',                                                                                                                                                                
+                'bandeaubas-bar-color-fond',                                                                                                                                                                
                 array(                                                                                                                                                                       
                         'label'      => "Couleur de fond de la barre de progression",                                                                                                                       
                         'section'    => 'couleurs_player_fixe',                                                                                                                                          
-                        'settings'   => 'lcdlg-bandeaubas-bar-color-fond',                                                                                                                                    
+                        'settings'   => 'bandeaubas-bar-color-fond',                                                                                                                                    
                 ) )                                                                                                                                                                          
         );
         
-			$wp_customize->add_setting( 'lcdlg-bandeaubas-bar-color-progress' , array(                                                                                                                                
+			$wp_customize->add_setting( 'bandeaubas-bar-color-progress' , array(                                                                                                                                
                 'default' => '#ffffff',                                                                                                                                                      
                 'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
         ));                                                                                                                                                                                  
@@ -229,15 +229,15 @@ function lcdlg_color_customizer($wp_customize){
         $wp_customize->add_control(                                                                                                                                                          
                 new WP_Customize_Color_Control(                                                                                                                                              
                 $wp_customize,                                                                                                                                                               
-                'lcdlg-bandeaubas-bar-color-progress',                                                                                                                                                                
+                'bandeaubas-bar-color-progress',                                                                                                                                                                
                 array(                                                                                                                                                                       
                         'label'      => "Couleur de fond de la barre de progression",                                                                                                                       
                         'section'    => 'couleurs_player_fixe',                                                                                                                                          
-                        'settings'   => 'lcdlg-bandeaubas-bar-color-progress',                                                                                                                                    
+                        'settings'   => 'bandeaubas-bar-color-progress',                                                                                                                                    
                 ) )                                                                                                                                                                          
         );
         
-		$wp_customize->add_setting( 'lcdlg-bandeaubas-time-color' , array(                                                                                                                                
+		$wp_customize->add_setting( 'bandeaubas-time-color' , array(                                                                                                                                
                 'default' => '#ffffff',                                                                                                                                                      
                 'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
         ));                                                                                                                                                                                  
@@ -245,11 +245,11 @@ function lcdlg_color_customizer($wp_customize){
         $wp_customize->add_control(                                                                                                                                                          
                 new WP_Customize_Color_Control(                                                                                                                                              
                 $wp_customize,                                                                                                                                                               
-                'lcdlg-bandeaubas-time-color',                                                                                                                                                                
+                'bandeaubas-time-color',                                                                                                                                                                
                 array(                                                                                                                                                                       
                         'label'      => "Couleur des durées",                                                                                                                       
                         'section'    => 'couleurs_player_fixe',                                                                                                                                          
-                        'settings'   => 'lcdlg-bandeaubas-time-color',                                                                                                                                    
+                        'settings'   => 'bandeaubas-time-color',                                                                                                                                    
                 ) )                                                                                                                                                                          
         );
 }                                                                                                                                                                                            

@@ -68,23 +68,23 @@
 		}
 		
 		#lcdlg-bandeaubas {
-			background: <?php echo esc_url( get_option('lcdlg-bandeaubas-bg-color-sides') ); ?>/*#676b08*/;
+			background: <?php echo get_theme_mod('bandeaubas-bg-color-sides'); ?>/*#676b08*/;
 		}
 		#lcdlg-bb-c-texte {
-			background: <?php echo esc_url( get_option('lcdlg-bandeaubas-bg-color') ); ?>/*#2b2d00*/;
+			background: <?php echo get_theme_mod('bandeaubas-bg-color'); ?>/*#2b2d00*/;
 		}
 		#jp-title, #jp-title a {
-			color:  <?php echo esc_url( get_option('lcdlg-bandeaubas-title-color') ); ?>/*#fff*/;
+			color:  <?php echo get_theme_mod('bandeaubas-title-color'); ?>/*#fff*/;
 		}
 		#jp-time .jp-seek-bar {
-			background: <?php echo esc_url( get_option('lcdlg-bandeaubas-bar-color-fond') ); ?>/*#505306*/;
+			background: <?php echo get_theme_mod('bandeaubas-bar-color-fond'); ?>/*#505306*/;
 		}
 		#jp-time .jp-play-bar {
-			background: <?php echo esc_url( get_option('lcdlg-bandeaubas-bar-color-progress') ); ?>/*#fff*/;
+			background: <?php echo get_theme_mod('bandeaubas-bar-color-progress'); ?>/*#fff*/;
 		}
 		#jp-time .jp-current-time,
 		#jp-time .jp-duration {
-			color: <?php echo esc_url( get_option('lcdlg-bandeaubas-time-color') ); ?>/*#fff*/;
+			color: <?php echo get_theme_mod('bandeaubas-time-color'); ?>/*#fff*/;
 		}
 	</style>
 </head>
