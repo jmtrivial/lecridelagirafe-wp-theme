@@ -52,14 +52,14 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 	?></lastBuildDate>
 	<generator>Le cri de la girafe</generator>
 	<image>
-      <!-- url>http://media.radiofrance-podcast.net/podcast09/RF_OMM_0000017232_ITE.png</url -->
+      <url><?php echo get_site_icon_url(); ?></url>
       <title><?php echo $page_name_full; ?></title>
       <link><?php echo $permalink; ?></link>
     </image>
     <itunes:author>Le cri de la girafe</itunes:author>
     <itunes:category text="Création sonore"></itunes:category>
     <itunes:explicit>no</itunes:explicit>
-    <!-- itunes:image href="http://media.radiofrance-podcast.net/podcast09/RF_OMM_0000017232_ITE.png" /-->
+    <itunes:image href="<?php echo get_site_icon_url(); ?>">
     <itunes:owner>
       <itunes:email>contact@lecridelagirafe.org</itunes:email>
       <itunes:name>Le cri de la girafe</itunes:name>
