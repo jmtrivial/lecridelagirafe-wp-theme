@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="profile" href="http://gmpg.org+/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="alternate" type="application/rss+xml" title="Le podcast du cri de la girafe" href="http://dev.lecridelagirafe.org/sons/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="Les podcasts du cri de la girafe" href="http://dev.lecridelagirafe.org/sons/feed/podcasts" />
 	<link rel="alternate" type="application/rss+xml" title="Les actualités du cri de la girafe" href="http://dev.lecridelagirafe.org/actualites/feed/" />
 	<?php wp_head(); ?>
 	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/common.js"></script>
