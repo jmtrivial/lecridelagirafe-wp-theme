@@ -87,7 +87,7 @@ class LCDLGPlayer {
 				this.player.jPlayer('setMedia', { mp3: this.tracks[id].file });
 				this.active = id;
 				$("#jp-title").empty().append("<a href=\"" + this.tracks[id].url + "\">" + this.tracks[id].title + "</a>");
-				$("#" + this.idContainer + " .lcdlg-hidden").removeClass("lcdlg-hidden");				
+				$("#" + this.idContainer + " .lcdlg-hidden").removeClass("lcdlg-hidden");
 				$("#" + this.idPlayPause).css("background", "url(\"" + this.tracks[id].image + "\") no-repeat center center");
 			}
 		}

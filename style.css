@@ -12,6 +12,52 @@
  Text Domain:  le-cri-de-la-girafe
 */
 
+
+@font-face {
+    font-family: "Gravity";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/Gravity-Regular.woff") format("woff"), 
+    url("fonts/Gravity-Regular.otf")  format("opentype");
+}
+
+@font-face {
+    font-family: "Gravity";
+    font-style: normal;
+    font-weight: bold;
+    src: url("fonts/Gravity-Bold.woff") format("woff"), 
+    url("fonts/Gravity-Bold.otf")  format("opentype");
+}
+
+@font-face {
+    font-family: "Gravity";
+    font-style: italic;
+    font-weight: normal;
+    src: url("fonts/Gravity-Italic.woff") format("woff"), 
+    url("fonts/Gravity-Italic.otf")  format("opentype");
+}
+
+@font-face {
+    font-family: "Gravity";
+    font-style: italic;
+    font-weight: bold;
+    src: url("fonts/Gravity-BoldItalic.woff") format("woff"), 
+    url("fonts/Gravity-BoldItalic.otf")  format("opentype");
+}
+
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: "Gravity", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+html {
+        font-size: 80%;
+}
+
 .site-header {
 		background-color: #676b08;
 }
@@ -29,17 +75,23 @@
 		padding-top: 3rem;
 		display: none;
 }
-
+.site-header .search-field {
+        height: 2.6em;
+}
 .site-header .search-field:hover {
 	background-color: #202100 !important;
 	color: #fff;
 }
 
 
+
 @media screen and (max-width : 960px) {
 	.site-title {
 		font-size: 400%;
 	}
+	.entry-title {
+            width: 100% !important;
+    }
 }
 
 @media screen and (max-width : 480px) {
@@ -232,7 +284,7 @@ span.lcdlg-line:hover {
 .son .entry-content>p,
 .son .lcdlg-content {
 		clear: right;
-		padding-left: 46%;
+		padding-left: 52%;
 		padding-top: 2.5em;
 }
 
@@ -283,9 +335,12 @@ span.lcdlg-line:hover {
 	width: 25%;
 }
 .lcdlg-archive .entry-title {
-	font-size: 2.2rem;
+	font-size: 1.8rem;
 }
-.auteur .entry-title {
+.lcdlg-archive .entry-summary {
+    font-size: 80%;
+}
+    .auteur .entry-title {
 		float: right;
 		display: inline-block;
 	clear: none;
@@ -320,6 +375,14 @@ span.lcdlg-line:hover {
 		clear: both;
 }
 
+.lcdlg-search article {
+        width: 25%;
+        float: left;
+        padding: 0 0.4em;
+}
+
+
+
 .lcdlg-search .auteur {
 		background: #eee;
 		padding: 1em;
@@ -332,11 +395,24 @@ span.lcdlg-line:hover {
 		float: right;
 		clear: right;
 		display: inline-block;
-		width: 45%;
+        width: 100%;
 		text-align: right;
+        font-size: 120%;
 }
 .lcdlg-search .entry-summary {
 		clear: right;
+        font-size: 90%;
+}
+
+.lcdlg-search .lcdlg-date {
+        float: right;
+}
+.lcdlg-search .entry-header .entry-thumbnail {
+        width: 100%;
+}
+.lcdlg-search .entry-thumbnail img {
+        width: 100%;
+        height: auto;
 }
 
 
@@ -388,12 +464,12 @@ span.lcdlg-line:hover {
 			clear: both;
 	}
 	
-	.lcdlg-archive article {
+	.lcdlg-archive article, .lcdlg-search article {
 		width: 50%;
 	}
 }
 @media screen and (max-width : 767px) {
-	.lcdlg-archive article {
+	.lcdlg-archive article, .lcdlg-search article  {
 		width: 100%;
 		padding: 0;
 	}
@@ -410,12 +486,12 @@ body #lcdlg-bandeau, body footer {
 
 body .home-link {
 	margin-top: 0;
-	width: 13em;
+	width: 11em;
 	transition: all 0.1s linear;
 }
 
 body #lcdlg-bandeau {
-	height: 13em;
+	height: 11em;
 	margin-top: 0;
 }
 
@@ -435,7 +511,7 @@ body.home #masthead {
 }
 
 body.home .home-link {
-	margin-top: -13em;
+	margin-top: -11em;
 	height: 0px;
 	transition: all 0.25s linear;
 }
@@ -1032,7 +1108,6 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 	height: 45%;
 	display: block;
 	font-weight: bold;
-	font-size: 120%;
 	padding-left: 1em;
 	padding-top: .2em;
 	color: #fff;
@@ -1053,18 +1128,22 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 }
 #jp-time .jp-play-bar {
 	background: #fff;
-	height: 1em;
+	height: 0.8em;
 	cursor: pointer;
 }
 #jp-time .jp-current-time {
 	color: #fff;
 	margin-left: 1em;
 	float: left;
+    font-size: 90%;
+    margin-top: -0.3em;
 }
 #jp-time .jp-duration {
 	color: #fff;
 	margin-right: 1em;
 	float: right;
+    font-size: 90%;
+    margin-top: -0.3em;
 }
 
 @media only screen and (max-width: 960px) {
@@ -1129,4 +1208,19 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 	color: #444;
 	font-size: 80%;
 	font-style: italic;
+}
+
+.small {
+	display: none;
+}
+.large {
+    display: inline;
+}
+@media screen and (max-width : 767px) {
+	.small {
+		display: inline;
+	}
+	.large {
+        display: none;
+    }
 }

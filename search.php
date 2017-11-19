@@ -18,8 +18,17 @@ get_header(); ?>
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'suits' ), get_search_query() ); ?></h1>
 			</header>
 
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php 
+                $nb = 0;
+                /* The loop */ ?>
+			<?php while ( have_posts() ) : 
+                if ($nb % 4 == 0)
+							echo "<div class=\"div-4\"> </div>";
+						else if ($nb % 2 == 0)
+							echo "<div class=\"div-2\"> </div>";
+						$nb = $nb + 1;
+						
+                the_post(); ?>
 				<?php get_template_part( 'content', get_post_format() ); ?>
 			<?php endwhile; ?>
 
