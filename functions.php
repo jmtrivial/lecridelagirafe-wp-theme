@@ -28,7 +28,23 @@ function lcdlg_color_customizer($wp_customize){
 			'section'  => 'premiere_page',
 			'settings' => 'lcdlg-image-premiere-page',
 		))); 
-    	 
+   
+        $wp_customize->add_setting( 'main_bg_color' , array(                                                                                                                                
+                'default' => '#ffffff',                                                                                                                                                      
+                'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 
+        ));                                                                                                                                                                                  
+                                                                                                                                                                                             
+        $wp_customize->add_control(                                                                                                                                                          
+                new WP_Customize_Color_Control(                                                                                                                                              
+                $wp_customize,                                                                                                                                                               
+                'main_bg_color',                                                                                                                                                                
+                array(                                                                                                                                                                       
+                        'label'      => "Couleur d'arrière-plan du centre de la page",                                                                                                                       
+                        'section'    => 'colors',                                                                                                                                          
+                        'settings'   => 'main_bg_color',                                                                                                                                    
+                ) )                                                                                                                                                                          
+        );       
+        
         $wp_customize->add_setting( 'masthead_color' , array(                                                                                                                                
                 'default' => '#676b08',                                                                                                                                                      
                 'sanitize_callback' => 'sanitize_hex_color',                                                                                                                                 

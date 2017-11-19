@@ -48,20 +48,26 @@
 	}
 }
 
+h1, h2, h3, h4 {
+	clear: none;
+}
+
 /** nos échos et nos cris */
 .lcdlg-archive article {
 		overflow: hidden;
-		break-inside: avoid-column;
+		/*break-inside: avoid-column;*/
 		position: relative;
-		/*float: left;*/
+		float: left;
+		width: 25%;
+		padding: 0 0.4em;
 }
 .lcdlg-portfolio {
 		overflow: hidden;
 		clear: both;
-		-webkit-column-count: 4;
+		/*-webkit-column-count: 4;
 		-moz-column-count: 4;
 		column-count: 4;
-		column-gap: 1em;
+		column-gap: 1em;*/
 }
 
 #secondary {
@@ -76,7 +82,7 @@
 		display: inline-block;
 		background: #000;
 		padding: 0.2em 1em;
-		border-radius: 0.4em;
+		border-radius: 0.2em;
 		float: right;
 		color: #fff !important;
 		margin: 0.1em;
@@ -107,8 +113,11 @@ a.lcdlg-tag:hover {
 		background: #90654b;
 }
 
+.son-auteur, .auteur-contributions, .auteur-contributions-actualites, .lcdlg-themes, .aussi {
+	clear: both;
+}
 
-.auteur-contributions ul, .auteur-contributions-actualites ul, .son-auteur ul, .lcdlg-themes ul {
+.auteur-contributions ul, .auteur-contributions-actualites ul, .son-auteur ul, .lcdlg-themes ul, .aussi ul {
 		padding: 0;
 		margin: 0;
 		list-style: none;
@@ -171,7 +180,6 @@ span.lcdlg-line:hover {
 		margin-top: 0.4em;
 		width: auto;
 		border-radius: 0.5em;	
-		float: left;
 		display: inline-block;
 }
 
@@ -186,6 +194,11 @@ span.lcdlg-line:hover {
 		width: 50%;
 }
 
+.entry-thumbnail img {
+	margin-bottom: 0.5rem;
+}
+
+
 .son .entry-thumbnail img {
 	width: 50%;
 	height: auto;
@@ -193,6 +206,7 @@ span.lcdlg-line:hover {
 	float: left;
 	margin-right: 1em;
     transition: opacity 0.25s ease-out;
+	border-radius: 0.2em;
 }
 .lcdlg-archive-auteur .entry-header .entry-thumbnail img, 
 .auteur .entry-header .entry-thumbnail img {
@@ -214,6 +228,7 @@ span.lcdlg-line:hover {
 		clear: none;
 		text-align: right;
 }
+
 .son .entry-content>p,
 .son .lcdlg-content {
 		clear: right;
@@ -235,6 +250,7 @@ span.lcdlg-line:hover {
 	float: right;
 	margin-left: 1em;
 	margin-right: 0;
+	border-radius: 0.2em;
 }
 .actualite .entry-header h1 {
 		float: left;
@@ -265,6 +281,9 @@ span.lcdlg-line:hover {
 }
 .lcdlg-archive-auteur .auteur  .entry-thumbnail {
 	width: 25%;
+}
+.lcdlg-archive .entry-title {
+	font-size: 2.2rem;
 }
 .auteur .entry-title {
 		float: right;
@@ -297,6 +316,9 @@ span.lcdlg-line:hover {
 		padding: 0;
 		margin: 0;
 }
+.contenus-alternatifs li {
+		clear: both;
+}
 
 .lcdlg-search .auteur {
 		background: #eee;
@@ -322,7 +344,7 @@ span.lcdlg-line:hover {
     background: #ff7700; 
     display: inline-block;
 	float: right;
-	border-radius: 0.4em;
+	border-radius: 0.2em;
 	padding: 0 0.4em;
 	margin-left: 0.2em;
 	color: #fff;
@@ -345,22 +367,41 @@ span.lcdlg-line:hover {
 }
 
 .lcdlg-podcasts {
-	background: #0580b5;
+	background: #472e74;
 }
 .lcdlg-podcasts:hover {
-    background: #4cabe5;
+    background: #654e8e;
+}
+
+.div-4 {
+	clear: both;
 }
 
 @media screen and (max-width : 960px) {
-	.lcdlg-portfolio {
+	/*.lcdlg-portfolio {
 		overflow: hidden;
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
 		column-count: 2;
+	}*/
+	.div-2 {
+			clear: both;
 	}
-
+	
+	.lcdlg-archive article {
+		width: 50%;
+	}
+}
+@media screen and (max-width : 767px) {
+	.lcdlg-archive article {
+		width: 100%;
+		padding: 0;
+	}
 }
 
+article {
+		padding-bottom: 0.8em !important;
+}
 /** front page */
 
 
@@ -377,6 +418,10 @@ body .home-link {
 body #lcdlg-bandeau {
 	height: 13em;
 	margin-top: 0;
+}
+
+body.home #main {
+		background-color: transparent;
 }
 
 body.home, html {
@@ -631,10 +676,24 @@ button#lcdlg-toggle-filter {
 body.lcdlg-filter-off .beautiful-taxonomy-filters {
 	display: none;
 }
+.beautiful-taxonomy-filters-tax.filter-count-5 {
+	padding: 0.4em;
+	width: 33.333%;
+}
 
+@media screen and (max-width : 960px) {
+	.beautiful-taxonomy-filters-tax.filter-count-5 {
+			padding: 0.4em;
+			width: 50%;
+	}
+}
 
 @media screen and (max-width : 768px) {
-
+	.beautiful-taxonomy-filters-tax.filter-count-5 {
+			width: 100%;
+			padding: 0;
+	}
+	
 	.beautiful-taxonomy-filters {
 			margin: 0 0 2em 0;
 	}
@@ -816,7 +875,7 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 		width: 40em;
 		float: left;
 		clear: both;
-		border-radius: 0.4em;
+		border-radius: 0.2em;
 		position: relative;
 		overflow: hidden;
 		
@@ -1064,4 +1123,11 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 		color: #888;
 		margin-top: -0.5em;
 		font-size: 110%;
+}
+
+
+.sans-javascript {
+	color: #444;
+	font-size: 80%;
+	font-style: italic;
 }

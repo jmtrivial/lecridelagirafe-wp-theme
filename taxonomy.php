@@ -36,6 +36,8 @@ $term_name = get_term_by( 'slug', $term, $taxonomy );
 							echo "du thème";
 						else if ($taxonomy == "recurrence")
 							echo "des sons d'une récurrence";
+						else if ($taxonomy == "serie")
+							echo "de la série";
 					?> 
 					<span class="lcdlg-tag lcdlg-tag-<?php
 						if ($taxonomy == "type_de_contenu")

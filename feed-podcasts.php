@@ -24,6 +24,8 @@ if ($taxonomy && $term) {
 		$page_name = "récurrence";
 	else if ($taxonomy == "type_de_contenu")
 		$page_name = "";
+	else if ($taxonomy == "serie")
+		$page_name = "série";
 	else
 		$page_name = $taxonomy;
 					

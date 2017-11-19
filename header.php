@@ -21,6 +21,11 @@
 	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/player.js"></script>
 	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/jquery.jplayer.js"></script>
 	<style type="text/css">
+		@media screen and (min-width : 768px) {
+			#main {
+				background-color: <?php echo get_theme_mod('main_bg_color'); ?>;
+			}
+		}
 		.site-header {
 			background-color: <?php echo get_theme_mod('masthead_color'); ?>;
 		}
