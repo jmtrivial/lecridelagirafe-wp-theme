@@ -60,16 +60,14 @@ get_header(); ?>
 				}
 			?>
 			</div>
-        <script>
-        updateFilters();
-			</script>
+
 
 			<?php suits_paging_nav(); ?>
 
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
-
+    <script>updateFilters();</script>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

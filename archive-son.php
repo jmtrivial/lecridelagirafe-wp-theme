@@ -42,6 +42,7 @@ get_header(); ?>
 					the_post();
 					$first = true;
 					echo "<button id=\"lcdlg-toggle-filter\" title=\"Afficher les filtres\">Filtrer...</button>";
+								
 					echo "<div class=\"lcdlg-portfolio\">";
 					$nb = 0;
 					do {
@@ -61,16 +62,14 @@ get_header(); ?>
 				}
 			?>
 			</div>
-			<script>
-        updateFilters();
-			</script>
+      
 
 			<?php suits_paging_nav(); ?>
 
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
-
+    <script>updateFilters();</script>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

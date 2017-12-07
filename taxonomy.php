@@ -75,6 +75,7 @@ $term_name = get_term_by( 'slug', $term, $taxonomy );
 				<?php get_template_part( 'content', get_post_format() ); ?>
 			<?php endwhile; ?>
 			</div>
+
 			<?php suits_paging_nav(); ?>
 
 		<?php else : ?>
