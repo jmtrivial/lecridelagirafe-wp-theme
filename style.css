@@ -1287,11 +1287,11 @@ button#lcdlg-toggle-filter {
 }
 
 
-.entry-thumbnail .duree-popup {
+article .entry-thumbnail .duree-popup {
     display: none;
 }
 
-.entry-thumbnail:hover .duree-popup {
+article:hover  .entry-thumbnail .duree-popup {
     display: block;
     position: absolute;
     top: 0;
