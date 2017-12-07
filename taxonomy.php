@@ -63,7 +63,15 @@ $term_name = get_term_by( 'slug', $term, $taxonomy );
 
 			<?php /* The loop */ ?>
 			<div class="lcdlg-portfolio">
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php 
+                $nb = 0;
+                while ( have_posts() ) : the_post(); 
+						if ($nb % 4 == 0)
+							echo "<div class=\"div-4\"> </div>";
+						else if ($nb % 2 == 0)
+							echo "<div class=\"div-2\"> </div>";
+						$nb = $nb + 1;
+                ?>
 				<?php get_template_part( 'content', get_post_format() ); ?>
 			<?php endwhile; ?>
 			</div>

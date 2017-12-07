@@ -21,7 +21,7 @@
 		<?php else : ?>
 			<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 			<div class="entry-thumbnail">
-				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
+				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail('lcdlg-preview'); ?></a>
 			</div>
 			<?php endif; ?>
 

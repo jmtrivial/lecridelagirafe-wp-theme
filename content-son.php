@@ -13,9 +13,15 @@
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<?php else : ?>
-			<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+			<?php if ( has_post_thumbnail() && ! post_password_required() ) : 
+			
+			
+			$pod = pods( 'son', get_the_ID() );
+			$duree = $pod->field( 'duree' )[0]["name"];
+			?>
 			<div class="entry-thumbnail">
-				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
+				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail($size = 'post-thumbnail'); ?></a>
+				<div class="duree-popup"><?php echo $duree; ?></div>
 			</div>
 			<?php endif; ?>
 

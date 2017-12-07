@@ -1,5 +1,9 @@
 <?php
 
+
+add_image_size( "lcdlg-preview", 300, 300, true);
+
+
                                                                                                                                                                                              
 function lcdlg_color_customizer($wp_customize){                                                                                                                                              
 

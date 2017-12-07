@@ -45,6 +45,9 @@
     url("fonts/Gravity-BoldItalic.otf")  format("opentype");
 }
 
+.entry-content a {
+        color: #734a3f;
+}
 
 html,
 button,
@@ -65,22 +68,37 @@ html {
 .home-link {
 		position: relative;
 }
+
+header {
+			margin-bottom: 0 !important;
+}
+
+
 .site-description {
 		color: #fff;
 		position: absolute;
-		bottom: 1em;
+		bottom: 0em;
 		right: 1em;
 }
+.site-title, .site-description {
+        color: #fff;
+}
+
 .site-title {
 		padding-top: 3rem;
 		display: none;
 }
+
+.site-header .search-form,
+.site-header .search-form>label,
 .site-header .search-field {
-        height: 2.6em;
+        height: 100%;/*2.7em;*/
 }
 .site-header .search-field:hover {
-	background-color: #202100 !important;
-	color: #fff;
+	/*background-color: #202100 !important;
+	color: #fff;*/
+	background-color: #fff;
+	color: #000;
 }
 
 
@@ -102,6 +120,12 @@ html {
 
 h1, h2, h3, h4 {
 	clear: none;
+     word-break: keep-all;
+}
+
+.entry-title {
+     word-break: keep-all;
+     font-size: 200%;
 }
 
 /** nos échos et nos cris */
@@ -140,6 +164,7 @@ h1, h2, h3, h4 {
 		margin: 0.1em;
 		font-weight: bold;
 		text-transform : uppercase;
+        font-size: 70%;
 }
 
 a.lcdlg-tag {
@@ -194,6 +219,9 @@ a.lcdlg-tag:hover {
 h1 .lcdlg-tag {
 		float: none;
 }
+header .lcdlg-tag {
+    font-size: 80%;
+}
 
 .lcdlg-line {
 		padding: 0.2em 1em;
@@ -221,7 +249,9 @@ span.lcdlg-line:hover {
 		font-weight: bold;
 		color: #222;
 }
-
+.lcdlg-line>span.lcdlg-tag {
+		font-weight: normal;
+}
 .lcdlg-line:hover>span {
 		color: #000;
 }
@@ -263,7 +293,9 @@ span.lcdlg-line:hover {
 .lcdlg-archive-auteur .entry-header .entry-thumbnail img, 
 .auteur .entry-header .entry-thumbnail img {
 	width: 100%;
+    /* TODO */
 }
+
 
 .lcdlg-archive .entry-header .entry-thumbnail:hover img,
 .lcdlg-archive-auteur .entry-header .entry-thumbnail:hover img {
@@ -381,6 +413,10 @@ span.lcdlg-line:hover {
         padding: 0 0.4em;
 }
 
+.site-header .search-field:hover {
+    background-color: #fbfaf7;
+}
+
 
 
 .lcdlg-search .auteur {
@@ -417,19 +453,19 @@ span.lcdlg-line:hover {
 
 
 .lcdlg-rss, .lcdlg-podcasts {
-    background: #ff7700; 
+    background: #ff9819; 
     display: inline-block;
 	float: right;
-	border-radius: 0.2em;
+	border-radius: 0.4em;
 	padding: 0 0.4em;
 	margin-left: 0.2em;
 	color: #fff;
 	font-weight: bold;
-	font-size: 120%;
+	font-size: 70%;
 	text-transform : uppercase;
 }
 .lcdlg-rss:hover, .lcdlg-podcasts:hover {
-    background: #ff9819; 
+    background: #ff7700; 
 	color: #fff;
 }
 .lcdlg-rss>span, .lcdlg-podcasts>span {
@@ -443,10 +479,10 @@ span.lcdlg-line:hover {
 }
 
 .lcdlg-podcasts {
-	background: #472e74;
+    background: #654e8e;
 }
 .lcdlg-podcasts:hover {
-    background: #654e8e;
+	background: #472e74;
 }
 
 .div-4 {
@@ -478,7 +514,9 @@ span.lcdlg-line:hover {
 article {
 		padding-bottom: 0.8em !important;
 }
-
+.hentry {
+         border-bottom: 0;   
+}
 
 body #lcdlg-bandeau, body footer { 
 	display: block;
@@ -684,9 +722,6 @@ body.home #lcdlg-mainmenu a span {
 /** pour les smartphones */
 
 @media screen and (max-width : 768px) {
-	header {
-			margin-bottom: 0 !important;
-	}
 	.lcdlg-portfolio {
 		overflow: hidden;
 		-webkit-column-count: 1;
@@ -756,11 +791,24 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 	width: 33.333%;
 }
 
+.beautiful-taxonomy-filters {
+		margin: 0 0 2em 0;
+}
+button#lcdlg-toggle-filter {
+		float: right;
+		margin-right: 0;
+		border-top: 0;
+		margin-bottom: 1em;
+		display: block;
+		background: default;
+}
+
 @media screen and (max-width : 960px) {
 	.beautiful-taxonomy-filters-tax.filter-count-5 {
 			padding: 0.4em;
 			width: 50%;
 	}
+
 }
 
 @media screen and (max-width : 768px) {
@@ -769,17 +817,7 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 			padding: 0;
 	}
 	
-	.beautiful-taxonomy-filters {
-			margin: 0 0 2em 0;
-	}
-	button#lcdlg-toggle-filter {
-		float: right;
-		margin-right: 0;
-		border-top: 0;
-		margin-bottom: 1em;
-		display: block;
-		background: default;
-	}
+
 }
 #wpadminbar #wp-admin-bar-edit {
 	display: none !important;
@@ -1112,6 +1150,9 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 	padding-top: .2em;
 	color: #fff;
 	overflow: hidden;
+    margin-top: -0.2em;
+    margin-bottom: 0.2em;
+    font-size: 95%;
 }
 #jp-title a {
 	color: #fff;
@@ -1135,14 +1176,14 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 	color: #fff;
 	margin-left: 1em;
 	float: left;
-    font-size: 90%;
+    font-size: 80%;
     margin-top: -0.3em;
 }
 #jp-time .jp-duration {
 	color: #fff;
 	margin-right: 1em;
 	float: right;
-    font-size: 90%;
+    font-size: 80%;
     margin-top: -0.3em;
 }
 
@@ -1223,4 +1264,40 @@ body.lcdlg-filter-off .beautiful-taxonomy-filters {
 	.large {
         display: none;
     }
+}
+
+#lcdlg-entete-ng {
+    border-bottom: 1px solid #CCC;
+}
+
+#lcdlg-entete-ng .entry-content {
+    margin-bottom: 0.5em;
+}
+
+#lcdlg-entete-ng h4 {
+        margin: 1em 2em;
+}
+#lcdlg-entete-ng h4 span {
+        display: inline-block;
+        text-align: center;
+}
+
+.nav-menu li a {
+        color: #fff;
+}
+
+
+.entry-thumbnail .duree-popup {
+    display: none;
+}
+
+.entry-thumbnail:hover .duree-popup {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 140%;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.5em;
+		border-bottom-right-radius: 0.7em;
 }

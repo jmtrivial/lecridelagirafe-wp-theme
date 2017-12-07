@@ -60,6 +60,10 @@ get_header(); ?>
 				}
 			?>
 			</div>
+        <script>
+        updateFilters();
+			</script>
+
 			<?php suits_paging_nav(); ?>
 
 		<?php else : ?>

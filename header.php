@@ -45,7 +45,6 @@
 		}
 		
 		.site-header .search-field:hover {
-			background-color: <?php echo get_theme_mod('menu_bg_survol_color'); ?> !important;
 			color: #fff;
 		}
 

@@ -26,10 +26,6 @@ function updateGeneralRendering() {
 	$("#navbar").removeClass("lcdlg-menutop");
 	$("#lcdlg-bandeau").removeClass("lcdlg-zero");
 	updateMenuSticky();
-	
-	setTimeout(function() {
-		updateFilters();
-	}, 1000);
 
 }
 

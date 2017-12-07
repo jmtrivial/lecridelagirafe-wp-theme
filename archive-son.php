@@ -54,13 +54,16 @@ get_header(); ?>
 							$first = false;
 						else
 							the_post(); 
-						get_template_part( 'content', get_post_format() ); 
+						get_template_part( 'content-son', get_post_format() ); 
 					}
 					while ( have_posts() );
 					echo "</div>";
 				}
 			?>
 			</div>
+			<script>
+        updateFilters();
+			</script>
 
 			<?php suits_paging_nav(); ?>
 
