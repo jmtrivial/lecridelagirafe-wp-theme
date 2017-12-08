@@ -20,7 +20,7 @@
 			$duree = $pod->field( 'duree' )[0]["name"];
 			?>
 			<div class="entry-thumbnail">
-				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail($size = 'post-thumbnail'); ?></a>
+				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail($size = 'lcdlg-preview'); ?></a>
 				<div class="duree-popup"><?php echo $duree; ?></div>
 			</div>
 			<?php endif; ?>
