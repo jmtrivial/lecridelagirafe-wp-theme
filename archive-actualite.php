@@ -17,7 +17,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
 				<a href="/actualites/feed" class="lcdlg-rss">rss <span class="logo" /></a>
-				<h1 class="archive-title" style="clear: none">Nos échos <small>On lit, on écoute, on y va</small></h1>
+				<h1 class="archive-title" style="clear: none">Nos échos <small>On lit, on écoute, on regarde, on y va</small></h1>
 				<?php
 					// Show an optional term description.
 					$term_description = term_description();
