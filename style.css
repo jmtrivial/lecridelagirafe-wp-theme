@@ -538,6 +538,8 @@ body #lcdlg-bandeau {
 	margin-top: 0;
 }
 
+
+/** LE SUJET POLÉMIQUE DE LA BARRE DE MENU SUR LA PREMIÈRE PAGE 
 body.home .navbar {
   display: none;
 }
@@ -546,7 +548,7 @@ body.home .navbar {
     display: block;
   }
   
-}
+} */
 
 
 body.home #main {
