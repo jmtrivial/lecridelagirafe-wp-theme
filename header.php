@@ -68,7 +68,7 @@
 		}
 		
 		body.home #lcdlg-mainmenu {
-			background: url('<?php echo esc_url( get_option('lcdlg-image-premiere-page') ); ?>') no-repeat;
+			/*background: url('<?php echo esc_url( get_option('lcdlg-image-premiere-page') ); ?>') no-repeat center center;*/
 		}
 		
 		#lcdlg-bandeaubas {

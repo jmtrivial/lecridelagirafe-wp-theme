@@ -79,6 +79,7 @@ header {
 		position: absolute;
 		bottom: 0em;
 		right: 1em;
+    padding-bottom: 1.0em;
 }
 .site-title, .site-description {
         color: #fff;
@@ -300,6 +301,10 @@ span.lcdlg-line:hover {
 .lcdlg-archive .entry-header .entry-thumbnail:hover img,
 .lcdlg-archive-auteur .entry-header .entry-thumbnail:hover img {
 	opacity: 0.7;
+}
+
+.lcdlg-archive-auteur .archive-header {
+    border-bottom: 0;
 }
 
 .son .sources {
@@ -533,6 +538,17 @@ body #lcdlg-bandeau {
 	margin-top: 0;
 }
 
+body.home .navbar {
+  display: none;
+}
+@media screen and (max-width : 767px) {
+  body.home .navbar {
+    display: block;
+  }
+  
+}
+
+
 body.home #main {
 		background-color: transparent;
 }
@@ -549,7 +565,7 @@ body.home #masthead {
 }
 
 body.home .home-link {
-	margin-top: -11em;
+	margin-top: -11em; /* TODO 14 */
 	height: 0px;
 	transition: all 0.25s linear;
 }
@@ -578,18 +594,25 @@ body.home #page {
 }
 
 body.home #lcdlg-mainmenu {
-	background: url("images/front-page.jpg") no-repeat;
-	padding: 0;
-	width: 1092px;
-
 	position: absolute;
     top: -9999px;
     bottom: -9999px;
     left: -9999px;
     right: -9999px;
     margin: auto;
-
+  	padding: 0;
+	width: 800px;
+  height: 800px;
 }
+body.home #lcdlg-mainmenu ul {
+	background: url("images/girafe-accueil.png") no-repeat;
+	width: 800px;
+  height: 680px;
+  padding: 0;
+  margin: 0;
+  margin-top: 50px;
+}
+
 body.home #lcdlg-mainmenu li  {
 	display: block;
 }
@@ -604,78 +627,105 @@ body.home #lcdlg-mainmenu a span {
 
 #lcdlg-nousgiraphons {
 	position: absolute;
-	top: 247px;
-	left: 26px;
-	width: 561px;
-	height: 129px;
+	top: 224px;
+	right: 0;
+	width: 331px;
+	height: 181px;
 	z-index: 5;
 }
 #lcdlg-nousgiraphons:hover {
-	background: url("images/nous-giraphons.jpg");
+	background: url("images/bestiole-solo.png");
 }
 
 #lcdlg-nosechos {
 	position: absolute;
-	top: 284px;
-	left: 586px;
-	width: 475px;
-	height: 257px;
+	top: 405px;
+	right: 0px;
+	width: 331px;
+	height: 171px;
 	z-index: 5;
 }
 #lcdlg-nosechos:hover {
-	background: url("images/nos-echos.jpg");
+	background: url("images/echo-solo.png");
 }
 
 #lcdlg-noscris {
 	position: absolute;
-	top: 514px;
-	left: 705px;
-	width: 362px;
-	height: 505px;
+	top: 224px;  
+	left: 134px;
+	width: 335px;
+	height: 181px;
 	z-index: 5;
 }
 #lcdlg-noscris:hover {
-	background: url("images/nos-cris.jpg");
+	background: url("images/ce-quelle-dit.png");
+}
+
+#lcdlg-crigirafe {
+	position: absolute;
+	top: 576px;  
+	right: 0;
+	width: 331px;
+	height: 154px;
+	z-index: 5;
+}
+#lcdlg-crigirafe:hover {
+	background: url("images/cri-solo.png") ;
 }
 
 @media screen and (max-width : 960px) {
-	body.home #lcdlg-mainmenu {
-		background: url("images/front-page-small.jpg") no-repeat;
+  body.home #lcdlg-mainmenu {
+  	width: 500px;
+  height: 525px;
+}
+	body.home #lcdlg-mainmenu ul {
+		background: url("images/girafe-accueil-small.png") no-repeat;
 		width: 500px;
-		height: 467px;
+		height: 425px;
 	}
 	
 	#lcdlg-nousgiraphons {
-		top: 112px;
-		left: 5px;
-		width: 266px;
-		height: 59px;
+		top: 158px;
+		right: 0px;
+		width: 207px;
+		height: 113px;
 	}
 	#lcdlg-nousgiraphons:hover {
-		background: url("images/nous-giraphons-small.jpg");
+		background: url("images/bestiole-solo-small.png");
 	}
 
 	#lcdlg-nosechos {
-		top: 127px;
-		left: 264px;
-		width: 220px;
-		height: 123px;
+		top: 271px;
+		right: 0;
+		width: 207px;
+		height: 107px;
 	}
 	#lcdlg-nosechos:hover {
-		background: url("images/nos-echos-small.jpg");
+		background: url("images/echo-solo-small.png");
 	}
 
 	#lcdlg-noscris {
-		top: 228px;
-		left: 319px;
-		width: 167px;
-		height: 239px;
+		top: 158px;
+		left: 83px;
+		width: 210px;
+		height: 113px;
 	}
 	#lcdlg-noscris:hover {
-		background: url("images/nos-cris-small.jpg");
+		background: url("images/ce-quelle-dit-small.png");
 	}
 
 
+	#lcdlg-crigirafe {
+	position: absolute;
+	top: 378px;  
+	right: 0;
+	width: 207px;
+	height: 107px;
+	z-index: 5;
+}
+#lcdlg-crigirafe:hover {
+	background: url("images/cri-solo-small.png") no-repeat;
+}
 }
 
 /* menu fixe */
@@ -1267,7 +1317,9 @@ button#lcdlg-toggle-filter {
 }
 
 #lcdlg-entete-ng {
-    border-bottom: 1px solid #CCC;
+    /*border-bottom: 1px solid #CCC;*/
+    padding: 2em 0;
+    margin-bottom: 2em;
 }
 
 #lcdlg-entete-ng .entry-content {
