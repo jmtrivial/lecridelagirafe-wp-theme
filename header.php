@@ -16,6 +16,8 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link rel="alternate" type="application/rss+xml" title="Les podcasts du cri de la girafe" href="http://lecridelagirafe.org/sons/feed/podcasts" />
 	<link rel="alternate" type="application/rss+xml" title="Les actualités du cri de la girafe" href="http://lecridelagirafe.org/actualites/feed/" />
+	<link rel="image_src" type="image/jpeg" href="<?php echo get_stylesheet_directory_uri(); ?>/images/girafe-accueil.png" />
+	<meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/images/girafe-accueil.png" />
 	<?php wp_head(); ?>
 	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/common.js"></script>
 	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/player.js"></script>
