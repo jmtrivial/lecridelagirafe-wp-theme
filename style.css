@@ -681,7 +681,7 @@ body.home #lcdlg-mainmenu a span {
   height: 525px;
 }
 	body.home #lcdlg-mainmenu ul {
-		background: url("images/girafe-accueil-small.png") no-repeat;
+		background: url("images/girafe-accueil-small.png") no-repeat center center;
 		width: 500px;
 		height: 425px;
 	}
@@ -729,6 +729,64 @@ body.home #lcdlg-mainmenu a span {
 	background: url("images/cri-solo-small.png") no-repeat;
 }
 }
+@media screen and (max-width : 768px) {
+  body.home #lcdlg-mainmenu {
+      width: 100%;
+      height: 80%;
+      padding-top: 3%;
+  }
+  body.home #lcdlg-mainmenu div {
+      width: 100%;
+      height: 100%;
+  }
+  body.home #lcdlg-mainmenu ul {
+      position: relative;
+      width: 100%;
+      height: default;
+      background-repeat: none;
+      background-size: contain;
+      margin-top: 0;
+
+  }
+  body.home #lcdlg-mainmenu div:after {
+  content: "";
+  display: block;
+  padding-bottom: 80%;
+}
+  
+  #lcdlg-crigirafe:hover,
+  #lcdlg-noscris:hover,
+  #lcdlg-nosechos:hover,
+  #lcdlg-nousgiraphons:hover {
+    background-image: none;
+  }
+  #lcdlg-noscris {
+    top: 36%;
+    left: 20%;
+    height: 17%;
+    width: 40%;
+  }
+  
+  #lcdlg-nousgiraphons {
+    top: 36%;
+    right: 0%;
+    height: 17%;
+    width: 40%;
+  }
+  
+  #lcdlg-nosechos {
+    top: 52%;
+    right: 0%;
+    height: 15%;
+    width: 40%;
+  }
+  #lcdlg-crigirafe {
+    top: 68%;
+    right: 0%;
+    height: 14%;
+    width: 40%;
+  }
+}
 
 /* menu fixe */
 #navbar {
@@ -774,6 +832,22 @@ body.home #lcdlg-mainmenu a span {
 /** pour les smartphones */
 
 @media screen and (max-width : 768px) {
+  .site-description {
+      top: 1em;
+      right: auto;
+      bottom: auto;
+      width: 100%;
+      display: block;
+      text-align: center;
+  }
+  body #lcdlg-bandeau {
+    height: 9em;
+  }
+  #masthead {
+    background-position: center center;
+    background-size: contain;
+/*    margin-top: -3em;*/
+  }
 	.lcdlg-portfolio {
 		overflow: hidden;
 		-webkit-column-count: 1;
