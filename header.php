@@ -50,6 +50,10 @@
 			color: #fff;
 		}
 
+    #lcdlg-bb-container {
+      background-color: <?php echo get_theme_mod('main_bg_color'); ?>
+    }
+
 		.lcdlg-telecommande .lcdlg-t-nom,
 		.lcdlg-telecommande .lcdlg-t-duration {
 			background-color: <?php echo get_theme_mod('telecommande-main-bg-color'); ?>;

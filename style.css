@@ -1010,7 +1010,7 @@ button#lcdlg-toggle-filter {
 #lcdlg-bb-container {
 	margin: auto;
 	width: 960px;
-	background: #2d1000;
+	background: #fff;
 	height: 60px;
 	padding: 0;
 }
@@ -1071,7 +1071,7 @@ button#lcdlg-toggle-filter {
 	#lcdlg-bb-container {
 			width: 100%;
 			height: auto;
-			background: #2d1000;
+			background: #fff;
 			padding: 0;
 			display: block;
 	}
