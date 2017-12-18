@@ -572,6 +572,12 @@ body.home .home-link {
 	transition: all 0.25s linear;
 }
 
+@media screen and (max-width : 768px) {
+  body.home .home-link {
+    margin-top: -9em;
+  }
+}
+
 body.home footer {
 	display: none;
 }
