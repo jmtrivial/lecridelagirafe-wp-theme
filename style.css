@@ -567,7 +567,7 @@ body.home #masthead {
 }
 
 body.home .home-link {
-	margin-top: -9em; /* TODO 14 */
+	margin-top: -11em; /* TODO 14 */
 	height: 0px;
 	transition: all 0.25s linear;
 }
