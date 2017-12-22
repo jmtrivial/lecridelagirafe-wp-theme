@@ -5,7 +5,7 @@
  * @package Suits
  * @since Suits 1.0
  */
-
+$lcdlg_single = true;
 get_header(); ?>
 <?php get_sidebar(); ?>
 
