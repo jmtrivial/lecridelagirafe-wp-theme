@@ -54,7 +54,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 	?></lastBuildDate>
 	<generator>Le cri de la girafe</generator>
 	<image>
-      <url><?php echo get_site_icon_url(); ?></url>
+      <url><?php echo get_stylesheet_directory_uri(); ?>/images/logo-4000.png</url>
       <title><?php echo $page_name_full; ?></title>
       <link><?php echo $permalink; ?></link>
     </image>

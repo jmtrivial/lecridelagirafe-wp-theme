@@ -1,15 +1,20 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
 
-  <div id="lcdlg-mainmenu"> 
-    <div>
-      <ul>
-        <li><a id="lcdlg-noscris" href="<?php /*echo esc_url( home_url( '/' ) );*/ ?>/sons/" title="nos cris"><span>nos cris</span></a></li>
-        <li><a id="lcdlg-nousgiraphons" href="<?php /*echo esc_url( home_url( '/' ) );*/ ?>/auteurs/"  title="nous, giraphones"><span>nous, giraphones</span></a></li>
-        <li><a id="lcdlg-nosechos" href="<?php /* echo esc_url( home_url( '/' ) );*/ ?>/actualites/" title="nos échos"><span>nos échos</span></a></li>
-        <li><a id="lcdlg-crigirafe" href="<?php /*echo esc_url( home_url( '/' ) );*/ ?>/le-cri-de-la-girafe/"  title="nos cris"><span>le cri de la girafe</span></a></li>
-      </ul>
-    </div>
-	</div>
+	<div id="front-page-one" class="front-page-panel">
+		<?php if ( is_active_sidebar( 'widgets-front-page-one' ) ) : ?>
+                <div class="widget-area">
+                        <?php dynamic_sidebar( 'widgets-front-page-one' ); ?>
+                </div><!-- .widget-area -->
+			<?php endif; ?>
+		</div>
+
+			<div id="front-page-two" class="front-page-panel">
+		<?php if ( is_active_sidebar( 'widgets-front-page-two' ) ) : ?>
+                <div class="widget-area">
+                        <?php dynamic_sidebar( 'widgets-front-page-two' ); ?>
+                </div><!-- .widget-area -->
+			<?php endif; ?>
+		</div>
 
 <?php get_footer(); ?>

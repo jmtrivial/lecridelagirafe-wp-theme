@@ -16,6 +16,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link rel="alternate" type="application/rss+xml" title="Les podcasts du cri de la girafe" href="http://lecridelagirafe.org/sons/feed/podcasts" />
 	<link rel="alternate" type="application/rss+xml" title="Les actualités du cri de la girafe" href="http://lecridelagirafe.org/actualites/feed/" />	
+	<link rel="alternate" type="application/rss+xml" title="Les virées du cri de la girafe" href="http://lecridelagirafe.org/virees/feed/" />	
 	<?php 
       global $lcdlg_single;
       if (! isset($lcdlg_single)) { ?>
