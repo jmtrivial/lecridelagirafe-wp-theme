@@ -4,6 +4,8 @@
  *
  * @package WordPress
  */
+ 
+ include("mp3.class.php");
 
 header('Content-Type: ' . feed_content_type('rss') . '; charset=' . get_option('blog_charset'), true);
 
@@ -59,7 +61,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
       <link><?php echo $permalink; ?></link>
     </image>
     <itunes:author>Le cri de la girafe</itunes:author>
-    <itunes:category text="Création sonore"></itunes:category>
+    <itunes:category>International</itunes:category>
     <itunes:explicit>no</itunes:explicit>
     <itunes:image href="<?php echo get_site_icon_url(); ?>" />
     <itunes:owner>
@@ -139,9 +141,27 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 				echo "sans thème";
 			}
 		?></itunes:keywords>
-      <!-- itunes:subtitle>Émission du 12.11.2017</itunes:subtitle -->
+      <itunes:subtitle><?php $categories = wp_get_post_terms($post->ID, 'type_de_contenu', array("fields" => "all"));
+			if ( $categories && ! is_wp_error( $categories ) ) {
+				$cats = array();
+				foreach ( $categories as $term ) {
+					$cats[] = $term->name;
+				}
+				$cats_list = join( ", ", $cats );
+				echo $cats_list;
+			}
+			else {
+				echo "-";
+			}?></itunes:subtitle>
       <itunes:summary><![CDATA[<?php the_excerpt_rss() ?>]]></itunes:summary>
-      <!-- itunes:duration>???</itunes:duration-->
+      <itunes:duration><?php 
+        $local_url = str_replace("https://", "http://", $url_son);
+        $local_url = str_replace("http://lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
+        $local_url = str_replace("http://dev.lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
+        $mp3file = new MP3File($local_url);
+        $duration = $mp3file->getDurationEstimate();
+        echo MP3File::formatTime($duration);
+      ?></itunes:duration>
 		<?php
 		/**
 		 * Fires at the end of each RSS feed item.
