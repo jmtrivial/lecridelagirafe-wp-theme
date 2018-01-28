@@ -1589,9 +1589,14 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 
 
 
-.front-page-panel h4 {
+.front-page-panel .widget h4.widget-title {
   clear: both;
+  margin-top: 1.5em;
 }
+.front-page-panel #pods_widget_list-7.widget h4.widget-title {
+  margin-top: 0;
+}
+
 .front-page-panel .cri-preview h5 {
     float: right;
     clear: right;

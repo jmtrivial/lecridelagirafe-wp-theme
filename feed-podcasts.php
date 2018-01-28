@@ -40,19 +40,20 @@ else {
 	$permalink = get_home_url() . "/sons/";
 }
 
-$page_name_full = "Le cri de la girafe — " . $page_name;
+$page_name_full = "Le cri de la girafe - " . $page_name;
 
 
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0" >
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" >
 <channel>
 	<title><?php echo $page_name_full; ?></title>
 	<link><?php echo $permalink; ?></link>
 	<description><?php bloginfo_rss('description') ?></description>
 	<language><?php bloginfo_rss( 'language' ); ?></language>
+	<atom:link href="http://lecridelagirafe.org/sons/feed/podcasts" rel="self" type="application/rss+xml" />
 	<lastBuildDate><?php
 		$date = get_lastpostmodified( 'GMT' );
-		echo $date ? mysql2date( 'D, d M Y H:i:s +0000', $date ) : date( 'D, d M Y H:i:s +0000' );
+		echo $date ? mysql2date( 'D, d M Y H:i:s +0000', $date, false ) : date( 'D, d M Y H:i:s +0000' );
 	?></lastBuildDate>
 	<generator>Le cri de la girafe</generator>
 	<image>
@@ -61,7 +62,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
       <link><?php echo $permalink; ?></link>
     </image>
     <itunes:author>Le cri de la girafe</itunes:author>
-    <itunes:category>International</itunes:category>
+    <itunes:category text="Society &amp; Culture" />
     <itunes:explicit>no</itunes:explicit>
     <itunes:image href="<?php echo get_site_icon_url(); ?>" />
     <itunes:owner>
@@ -88,7 +89,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 		<title><?php the_title_rss() ?></title>
 		<description><![CDATA[<?php the_excerpt_rss() ?>]]></description>
 		<link><?php the_permalink_rss() ?></link>
-		<author>contact@lecridelagirafe.org</author>
+		<author>contact@lecridelagirafe.org (Collectif le cri de la girafe)</author>
 		<category><?php 
 			$categories = wp_get_post_terms($post->ID, 'type_de_contenu', array("fields" => "all"));
 			if ( $categories && ! is_wp_error( $categories ) ) {
@@ -110,6 +111,10 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 					$url_son = $related["guid"];
 			}
 
+        $local_url = str_replace("https://", "http://", $url_son);
+        $local_url = str_replace("http://lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
+        $local_url = str_replace("http://dev.lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
+
 			
 			$authors = $pod->field( 'auteur' );
 			$auteurs = "";
@@ -122,9 +127,11 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 
 			}
 		?>
-	  <enclosure url="<?php echo $url_son;?>" type="audio/mpeg"  />
-      <guid ><?php echo $url_son;?></guid>
-      <pubDate><?php echo get_the_date(); ?></pubDate>
+	  <enclosure url="<?php echo $url_son;?>" length="<?php echo filesize($local_url);?>" type="audio/mpeg"  />
+      <guid><?php echo $url_son;?></guid>
+      <pubDate><?php 
+        echo mysql2date('D, d M Y H:i:s +0000', get_post_time('Y-m-d H:i:s', true), false); 
+        ?></pubDate>
       <itunes:author><?php echo $auteurs; ?></itunes:author>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords><?php 
@@ -136,6 +143,8 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 				}
 				$cats_list = join( ", ", $cats );
 				echo $cats_list;
+				if (count(cats) == 1)
+          echo ",";
 			}
 			else {
 				echo "sans thème";
@@ -153,11 +162,8 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 			else {
 				echo "-";
 			}?></itunes:subtitle>
-      <itunes:summary><![CDATA[<?php the_excerpt_rss() ?>]]></itunes:summary>
+      <itunes:summary><![CDATA[<?php the_excerpt_rs(s) ?>]]></itunes:summary>
       <itunes:duration><?php 
-        $local_url = str_replace("https://", "http://", $url_son);
-        $local_url = str_replace("http://lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
-        $local_url = str_replace("http://dev.lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
         $mp3file = new MP3File($local_url);
         $duration = $mp3file->getDurationEstimate();
         echo MP3File::formatTime($duration);
