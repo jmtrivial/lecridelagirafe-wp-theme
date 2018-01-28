@@ -162,7 +162,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 			else {
 				echo "-";
 			}?></itunes:subtitle>
-      <itunes:summary><![CDATA[<?php the_excerpt_rs(s) ?>]]></itunes:summary>
+      <itunes:summary><![CDATA[<?php the_excerpt_rss(); ?>]]></itunes:summary>
       <itunes:duration><?php 
         $mp3file = new MP3File($local_url);
         $duration = $mp3file->getDurationEstimate();
