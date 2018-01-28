@@ -295,6 +295,7 @@ span.lcdlg-line:hover {
 	margin-right: 1em;
     transition: opacity 0.25s ease-out;
 	border-radius: 0.2em;
+  margin-top: 0;
 }
 .lcdlg-archive-auteur .entry-header .entry-thumbnail img, 
 .auteur .entry-header .entry-thumbnail img {
@@ -356,16 +357,19 @@ span.lcdlg-line:hover {
 		width: 100%;
 }
 
+.viree .entry-header .entry-thumbnail img,
 .actualite .entry-header .entry-thumbnail img {
 	float: right;
 	margin: 1em;
 	margin-right: 0;
+  margin-top: 0;
 	border-radius: 0.2em;
 }
 .actualite .entry-header h1 {
 		float: left;
 		clear: none;
 }
+.viree .entry-content>p,
 .actualite .entry-content>p,
 .actualite .lcdlg-content {
 		clear: left;
@@ -1473,6 +1477,13 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
   padding-right: 0.5em;
   padding-top: 5em;
 }
+
+@media screen and (max-height : 800px) {
+  #front-page-one {
+    padding-top: 0;
+  }
+}
+
 #front-page-two {
   padding-left: 0.5em;
 }
@@ -1509,10 +1520,14 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
       padding-top: 0;
       margin-left: 0;
     }
+    
+
 }
 
 #front-page-one .widget_media_image {
   text-align: center;
+  margin-bottom: 0.5em;
+  padding-bottom: 0; 
 }
 
 .front-page-panel .cri-preview {
@@ -1532,12 +1547,30 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 .front-page-panel .cri-preview .cri-p-droit {
     margin-left: 160px;
 }
+@media screen and (max-width : 768px) {
+  .front-page-panel .cri-preview .cri-p-gauche {
+      width: 100px;
+  }
+    #front-page-two .size-thumbnail {
+        width: 100px;
+        height: 100px;
+    }
+    .front-page-panel .cri-preview .cri-p-droit {
+        margin-left: 105px;
+    }
+}
 
+
+
+.front-page-panel h4 {
+  clear: both;
+}
 .front-page-panel .cri-preview h5 {
     float: right;
     clear: right;
     margin-top: 0.5em;
     margin-bottom: 0.8em;
+    text-align: right;
 }
 
 .front-page-panel .cri-preview .lcdlg-content  {
@@ -1548,4 +1581,22 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 
 .widget {
   border-bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  .front-page-panel .cri-preview .cri-p-gauche {
+      width: 60px;
+  }
+    #front-page-two .size-thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+    .front-page-panel .cri-preview .cri-p-droit {
+        margin-left: 65px;
+    }
+    .front-page-panel .cri-preview .lcdlg-content {
+        clear: both;
+        margin: 0;
+        text-align: justify;
+        margin-left: -62px;
+    }
 }
