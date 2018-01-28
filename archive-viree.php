@@ -12,7 +12,7 @@ get_header(); ?>
 <?php get_sidebar(); ?>
 
 	<div id="primary" class="content-area">
-		<div id="content" class="site-content lcdlg-archive" role="main">
+		<div id="content" class="site-content lcdlg-archive lcdlg-archive-viree" role="main">
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">

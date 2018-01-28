@@ -309,7 +309,8 @@ span.lcdlg-line:hover {
 	opacity: 0.9;
 }
 
-.lcdlg-archive-auteur .archive-header {
+.lcdlg-archive-auteur .archive-header,
+.lcdlg-archive-viree .archive-header{
     border-bottom: 0;
 }
 
