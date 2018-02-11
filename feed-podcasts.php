@@ -64,7 +64,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
     <itunes:author>Le cri de la girafe</itunes:author>
     <itunes:category text="Society &amp; Culture" />
     <itunes:explicit>no</itunes:explicit>
-    <itunes:image href="<?php echo get_site_icon_url(); ?>" />
+    <itunes:image href="<?php echo get_stylesheet_directory_uri(); ?>/images/lecridelagirafe-1400.png" />
     <itunes:owner>
       <itunes:email>contact@lecridelagirafe.org</itunes:email>
       <itunes:name>Le cri de la girafe</itunes:name>

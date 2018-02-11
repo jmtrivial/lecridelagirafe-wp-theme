@@ -1561,10 +1561,15 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
     clear: both;
 }
 
+#front-page-two .size-thumbnail {
+        width: 120px;
+        height: auto;
+}
+
 .front-page-panel .cri-preview .cri-p-gauche {
     float: left;
     clear: both;
-    width: 150px;
+    width: 120px;
     margin-bottom: 0.5em;
 }
 .front-page-panel .cri-preview .cri-p-gauche img {
@@ -1572,7 +1577,8 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 }
 
 .front-page-panel .cri-preview .cri-p-droit {
-    margin-left: 160px;
+    margin-left: 127px;
+    line-height: 1.5rem;
 }
 @media screen and (max-width : 768px) {
   .front-page-panel .cri-preview .cri-p-gauche {
@@ -1600,7 +1606,7 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 .front-page-panel .cri-preview h5 {
     float: right;
     clear: right;
-    margin-top: 0.5em;
+    margin-top: 0em;
     margin-bottom: 0.8em;
     text-align: right;
 }

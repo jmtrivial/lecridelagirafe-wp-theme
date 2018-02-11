@@ -51,10 +51,6 @@
 			color: #fff;
 		}
 		
-		.site-header .search-field:hover {
-			color: #fff;
-		}
-
     #lcdlg-bb-container {
       background-color: <?php echo get_theme_mod('main_bg_color'); ?>
     }

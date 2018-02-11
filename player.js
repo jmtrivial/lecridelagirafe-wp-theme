@@ -160,7 +160,7 @@ function setTelecommandePlay(id) {
 
 }
 
-function remplacerLecteur(info_track) {
+function remplacerLecteur(info_track, writeTitle) {
 	var basicLecteur = $("." + info_track.id);
 	
 	if (basicLecteur.hasClass("pour-player")) {
@@ -178,7 +178,11 @@ function remplacerLecteur(info_track) {
 			dlclass = "lcdlg-withdl";
 		}
 		
-		var lecteur = "<div class=\"lcdlg-telecommande " + status + " " + dlclass + "\" id=\"lecteur-" + info_track.id + "\"><button class=\"lcdlg-t-play\" title=\"écouter maintenant\"><span>écouter maintenant</span></button><button class=\"lcdlg-t-pause\" title=\"pause\"><span>pause</span></button><div class=\"lcdlg-t-texte\"><div class=\"lcdlg-t-nom\" title=\"titre du cri\"><span>"+ info_track.title + "</span></div><div class=\"lcdlg-t-duration\"></div></div><button class=\"lcdlg-t-playlist\"  title=\"écouter plus tard\"><span>écouter plus tard</span></button>" + dllink + "</div>";
+		var title = "écouter";
+    if (writeTitle)
+      title = info_track.title;
+		
+		var lecteur = "<div class=\"lcdlg-telecommande " + status + " " + dlclass + "\" id=\"lecteur-" + info_track.id + "\"><button class=\"lcdlg-t-play\" title=\"écouter maintenant\"><span>écouter maintenant</span></button><button class=\"lcdlg-t-pause\" title=\"pause\"><span>pause</span></button><div class=\"lcdlg-t-texte\"><div class=\"lcdlg-t-nom\" title=\"titre du cri\"><span>"+ title + "</span></div><div class=\"lcdlg-t-duration\"></div></div><button class=\"lcdlg-t-playlist\"  title=\"écouter plus tard\"><span>écouter plus tard</span></button>" + dllink + "</div>";
 		// ajout du nouveau lecteur à la page
 		basicLecteur.before(lecteur);
 
@@ -218,7 +222,7 @@ function remplacerLecteur(info_track) {
 	}
 }
 
-function ajouterLecteurByClass(classSelector, setPlayerIfEmpty = false, setInterface = true) {
+function ajouterLecteurByClass(classSelector, setPlayerIfEmpty = false, setInterface = true, writeTitle = true) {
 	$(document).ready(function(){
 		var infos = getTrackInfos(classSelector);
 		for (info of infos) {
@@ -228,7 +232,7 @@ function ajouterLecteurByClass(classSelector, setPlayerIfEmpty = false, setInter
 				window.player.setTrackIfEmpty(info.id);
 			// créer l'interface de la track
 			if (setInterface)
-				remplacerLecteur(info);
+				remplacerLecteur(info, writeTitle);
 		}
 	});
 }

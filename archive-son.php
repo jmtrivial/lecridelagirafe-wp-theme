@@ -17,6 +17,7 @@ get_header(); ?>
 		
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
+				<a href="https://itunes.apple.com/us/podcast/le-cri-de-la-girafe-nos-cris/id1342339823" class="lcdlg-podcasts">podcast itunes <span class="logo" /></a>
 				<a href="/sons/feed/podcasts" class="lcdlg-podcasts">podcast rss <span class="logo" /></a>
 				<!-- a href="/sons/feed" class="lcdlg-rss">rss  <span class="logo" /></a-->
 				<h1 class="archive-title" style="clear: none">Nos cris <small>Productions sonores et radiophoniques</small></h1>
