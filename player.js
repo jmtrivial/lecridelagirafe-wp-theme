@@ -13,14 +13,39 @@ class LCDLGPlayer {
 			return LCDLGPlayer.instance;
 		}
 		
+		initPlayerEmbed(idPlayer, idContainer) {
+			this.player = jQuery("#" + idPlayer);
+      // create jplayer
+      this.idContainer = "lecteur-" + idContainer;
+			this.player.jPlayer({
+				volume: 1.0,
+				cssSelectorAncestor: "#lecteur-" + idContainer,
+				cssSelector: {
+          currentTime: '.lcdlg-t-currenttime',
+				},
+        supplied: "mp3",
+				autoBlur: false,
+				keyEnabled: true,
+				play: function() {
+					window.player.firstLoad = false;
+					window.player.setAllTelecommandesPause();
+					setTelecommandePlay(window.player.active);
+				},
+				pause: function() {
+					setTelecommandePause(window.player.active);
+				},
+        
+      });
+    }
+		
 		initPlayer(idPlayer, idContainer, idPlayPause, idText) {
-			this.player = $("#" + idPlayer);
+			this.player = jQuery("#" + idPlayer);
 			this.idPlayPause = idPlayPause;
 			this.idContainer = idContainer;
 			// add supplementary elements in idPlayPause and idText
 			
-			$("#" + idPlayPause).empty().append("<button id=\"jp-play\" class=\"lcdlg-hidden\" href=\"#\" title=\"lecture\"><span>lecture></span></button><button class=\"lcdlg-hidden\" id=\"jp-pause\" href=\"#\" title=\"pause\"><span>pause></span></button>");
-			$("#" + idText).empty().append("<div id=\"jp-title\" class=\"lcdlg-hidden\" title=\"écoute en cours\"></div><div class=\"lcdlg-hidden\" id=\"jp-time\"><div class=\"jp-progress\"><div class=\"jp-seek-bar\"><div class=\"jp-play-bar\"></div></div></div><div class=\"jp-current-time\" role=\"timer\" aria-label=\"time\">&nbsp;</div><div class=\"jp-duration\" role=\"timer\" aria-label=\"duration\">&nbsp;</div></div>");
+			jQuery("#" + idPlayPause).empty().append("<button id=\"jp-play\" class=\"lcdlg-hidden\" href=\"#\" title=\"lecture\"><span>lecture></span></button><button class=\"lcdlg-hidden\" id=\"jp-pause\" href=\"#\" title=\"pause\"><span>pause></span></button>");
+			jQuery("#" + idText).empty().append("<div id=\"jp-title\" class=\"lcdlg-hidden\" title=\"écoute en cours\"></div><div class=\"lcdlg-hidden\" id=\"jp-time\"><div class=\"jp-progress\"><div class=\"jp-seek-bar\"><div class=\"jp-play-bar\"></div></div></div><div class=\"jp-current-time\" role=\"timer\" aria-label=\"time\">&nbsp;</div><div class=\"jp-duration\" role=\"timer\" aria-label=\"duration\">&nbsp;</div></div>");
 			
 			// create jplayer
 			this.player.jPlayer({
@@ -77,18 +102,19 @@ class LCDLGPlayer {
 		}
 		
 		setTrackIfEmpty(id) {
-				if (this.firstLoad)
+				if (this.firstLoad) {
 					this.setTrack(id);
+        }
 		}
 		
 		setTrack(id) {
 			// Set the track but not play it
-			if (this.active != id) {
+			if (this.active != id && this.player) {
 				this.player.jPlayer('setMedia', { mp3: this.tracks[id].file });
 				this.active = id;
-				$("#jp-title").empty().append("<a href=\"" + this.tracks[id].url + "\">" + this.tracks[id].title + "</a>");
-				$("#" + this.idContainer + " .lcdlg-hidden").removeClass("lcdlg-hidden");
-				$("#" + this.idPlayPause).css("background", "url(\"" + this.tracks[id].image + "\") no-repeat center center");
+				jQuery("#jp-title").empty().append("<a href=\"" + this.tracks[id].url + "\">" + this.tracks[id].title + "</a>");
+				jQuery("#" + this.idContainer + " .lcdlg-hidden").removeClass("lcdlg-hidden");
+				jQuery("#" + this.idPlayPause).css("background", "url(\"" + this.tracks[id].image + "\") no-repeat center center");
 			}
 		}
 		play(id) {
@@ -111,12 +137,12 @@ class LCDLGPlayer {
 
 function getTrackInfos(selector) {
 	var result = [];
-	$("." + selector).each(function() {
+	jQuery("." + selector).each(function() {
 						var id = selector;
-						var file = $($(this).children("source")[0]).attr("src");
-						var title = $(this).attr("title");
-						var url = $($(this).children("a.son-url")[0]).attr("href");
-						var image = $($(this).children("a.image-url")[0]).attr("href");
+						var file = jQuery(jQuery(this).children("source")[0]).attr("src");
+						var title = jQuery(this).attr("title");
+						var url = jQuery(jQuery(this).children("a.son-url")[0]).attr("href");
+						var image = jQuery(jQuery(this).children("a.image-url")[0]).attr("href");
 						result.push({ "id": id, "file": file, "title": title, "url": url, "image": image});
 	});
 	return result;
@@ -146,29 +172,29 @@ function dureeHumaine(duration) {
 
 function setDuration(id, duration) {
 	window.player.setDuration(id, duration);
-	$("#lecteur-" + id + " .lcdlg-t-duration").replaceWith("<div title=\"durée du cri\" class=\"lcdlg-t-duration\">" + dureeHumaine(duration) + "</div>");
+	jQuery("#lecteur-" + id + " .lcdlg-t-duration").replaceWith("<div title=\"durée du cri\" class=\"lcdlg-t-duration\">" + dureeHumaine(duration) + "</div>");
 }
 
 function setTelecommandePause(id) {
-		$("#lecteur-" + id).addClass("lcdlg-paused");
-		$("#lecteur-" + id).removeClass("lcdlg-playing");
+		jQuery("#lecteur-" + id).addClass("lcdlg-paused");
+		jQuery("#lecteur-" + id).removeClass("lcdlg-playing");
 }
 
 function setTelecommandePlay(id) {
-		$("#lecteur-" + id).removeClass("lcdlg-paused");
-		$("#lecteur-" + id).addClass("lcdlg-playing");
+		jQuery("#lecteur-" + id).removeClass("lcdlg-paused");
+		jQuery("#lecteur-" + id).addClass("lcdlg-playing");
 
 }
 
-function remplacerLecteur(info_track, writeTitle) {
-	var basicLecteur = $("." + info_track.id);
+function remplacerLecteur(info_track, writeTitle, embed = false) {
+	var basicLecteur = jQuery("." + info_track.id);
 	
 	if (basicLecteur.hasClass("pour-player")) {
 		basicLecteur.removeClass("pour-player");
 		// création du nouveau lecteur
 		
 		var status = "lcdlg-paused";
-		if (window.player.isPlayingTrack(info_track.id))
+		if (window.player && window.player.isPlayingTrack(info_track.id))
 			status = "lcdlg-playing";
 		
 		var dllink = "";
@@ -182,26 +208,35 @@ function remplacerLecteur(info_track, writeTitle) {
     if (writeTitle)
       title = info_track.title;
 		
-		var lecteur = "<div class=\"lcdlg-telecommande " + status + " " + dlclass + "\" id=\"lecteur-" + info_track.id + "\"><button class=\"lcdlg-t-play\" title=\"écouter maintenant\"><span>écouter maintenant</span></button><button class=\"lcdlg-t-pause\" title=\"pause\"><span>pause</span></button><div class=\"lcdlg-t-texte\"><div class=\"lcdlg-t-nom\" title=\"titre du cri\"><span>"+ title + "</span></div><div class=\"lcdlg-t-duration\"></div></div><button class=\"lcdlg-t-playlist\"  title=\"écouter plus tard\"><span>écouter plus tard</span></button>" + dllink + "</div>";
+    if (embed) {
+      var lecteur = "<div class=\"lcdlg-telecommande " + status + " " + dlclass + "\" id=\"lecteur-" + info_track.id + "\"><button class=\"lcdlg-t-play\" title=\"écouter maintenant\"><span>écouter maintenant</span></button><button class=\"lcdlg-t-pause\" title=\"pause\"><span>pause</span></button><div class=\"lcdlg-t-texte\"><div class=\"lcdlg-t-nom\" title=\"titre du cri\"><span>"+ title + "</span></div><div class=\"lcdlg-t-currenttime\"></div><div class=\"lcdlg-t-duration\"></div></div><div id=\"jp-time\"><div class=\"jp-progress\"><div class=\"jp-seek-bar\"><div class=\"jp-play-bar\"></div></div></div></div></div>" + dllink + "</div>";
+    }
+    else {
+      var lecteur = "<div class=\"lcdlg-telecommande " + status + " " + dlclass + "\" id=\"lecteur-" + info_track.id + "\"><button class=\"lcdlg-t-play\" title=\"écouter maintenant\"><span>écouter maintenant</span></button><button class=\"lcdlg-t-pause\" title=\"pause\"><span>pause</span></button><div class=\"lcdlg-t-texte\"><div class=\"lcdlg-t-nom\" title=\"titre du cri\"><span>"+ title + "</span></div><div class=\"lcdlg-t-duration\"></div></div><!-- button class=\"lcdlg-t-playlist\"  title=\"écouter plus tard\"><span>écouter plus tard</span></button-->" + dllink + "</div>";
+    }
+    
 		// ajout du nouveau lecteur à la page
 		basicLecteur.before(lecteur);
 
-		// configuration des boutons
-		$("#lecteur-" + info_track.id + ">.lcdlg-t-play").click(function() {
-			window.player.play(info_track.id);
-			setTelecommandePlay(info_track.id);
-		});
-		$("#lecteur-" + info_track.id + ">.lcdlg-t-pause").click(function() {
-			window.player.pause(info_track.id);
-			setTelecommandePause(info_track.id);
-		});
-		$("#lecteur-" + info_track.id + ">.lcdlg-t-playlist").click(function() {
-			window.player.addToPlaylist(info_track.id);
-		});
-		$("#lecteur-" + info_track.id + ">.lcdlg-t-telecharger").click(function(e) {
-			e.preventDefault();
-			window.player.download(info_track.id);
-		});
+     if (!embed) {
+        // configuration des boutons
+        jQuery("#lecteur-" + info_track.id + ">.lcdlg-t-play").click(function() {
+          window.player.play(info_track.id);
+          setTelecommandePlay(info_track.id);
+        });
+        jQuery("#lecteur-" + info_track.id + ">.lcdlg-t-pause").click(function() {
+          window.player.pause(info_track.id);
+          setTelecommandePause(info_track.id);
+        });
+        jQuery("#lecteur-" + info_track.id + ">.lcdlg-t-playlist").click(function() {
+          window.player.addToPlaylist(info_track.id);
+        });
+        jQuery("#lecteur-" + info_track.id + ">.lcdlg-t-telecharger").click(function(e) {
+          e.preventDefault();
+          window.player.download(info_track.id);
+        });
+      }
+    
 		
 		// la durée sera affichée une fois connue
 		if (isNaN(basicLecteur[0].duration)) {
@@ -222,29 +257,35 @@ function remplacerLecteur(info_track, writeTitle) {
 	}
 }
 
-function ajouterLecteurByClass(classSelector, setPlayerIfEmpty = false, setInterface = true, writeTitle = true) {
-	$(document).ready(function(){
+function ajouterLecteurByClass(classSelector, setPlayerIfEmpty = false, setInterface = true, writeTitle = true, embed = false) {
+	jQuery(document).ready(function(){
 		var infos = getTrackInfos(classSelector);
 		for (info of infos) {
 			// enregistrement de la track dans le lecteur
-			window.player.registerTrack(info);
-			if (setPlayerIfEmpty)
-				window.player.setTrackIfEmpty(info.id);
-			// créer l'interface de la track
-			if (setInterface)
-				remplacerLecteur(info, writeTitle);
+      if (typeof window.player !== 'undefined') {
+        window.player.registerTrack(info);
+        if (setPlayerIfEmpty)
+          window.player.setTrackIfEmpty(info.id);
+      }
+      // créer l'interface de la track
+      if (setInterface)
+        remplacerLecteur(info, writeTitle, embed);
+      
 		}
 	});
 }
 
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
 	
-	$("#lcdlg-bandeaubas").removeClass("lcdlg-hidden");
-	$(".zaback").addClass("with-bb");
-	$(".site-info-container").addClass("with-bb");
-	
-	window.player = new LCDLGPlayer();
-	
-	window.player.initPlayer("jquery_jplayer", "lcdlg-bb-container", "lcdlg-bb-c-player", "lcdlg-bb-c-texte");
+  if (jQuery("#lcdlg-bandeaubas").length) {
+    console.log("test");
+    jQuery("#lcdlg-bandeaubas").removeClass("lcdlg-hidden");
+    jQuery(".zaback").addClass("with-bb");
+    jQuery(".site-info-container").addClass("with-bb");
+    
+    window.player = new LCDLGPlayer();
+    
+    window.player.initPlayer("jquery_jplayer", "lcdlg-bb-container", "lcdlg-bb-c-player", "lcdlg-bb-c-texte");
+  }
 });

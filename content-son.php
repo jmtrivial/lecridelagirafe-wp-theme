@@ -41,6 +41,14 @@
 		<?php the_content( __( 'Lire la suite <span class="meta-nav">&rarr;</span>', 'suits' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'suits' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 	</div><!-- .entry-content -->
+	
+	<div class="embed-code">
+    <div class="ec-header">&lt; /&gt;</div>
+    <div class="ec-content">
+      &lt;iframe src="<?php echo esc_url( get_permalink() ); ?>embed/" width="100%" height="300px" scrolling="no" &gt;&lt;/iframe&gt;
+    </div>
+    <div class="ec-footer">code html à inclure dans votre page</div>
+	</div>
 	<?php endif; ?>
 
 	<footer class="entry-meta">

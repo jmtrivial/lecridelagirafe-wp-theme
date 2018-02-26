@@ -642,4 +642,72 @@ function custom_breadcrumbs() {
        
 }
 
+function fb_opengraph() {
+    global $post;
+ 
+    if(is_single()) {
+        if(has_post_thumbnail($post->ID)) {
+            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+        } else {
+            $img_src = get_stylesheet_directory_uri() . '/images/lecridelagirafe-1400.png';
+        }
+        if($excerpt = $post->post_excerpt) {
+            $excerpt = strip_tags($post->post_excerpt);
+            $excerpt = str_replace("", "'", $excerpt);
+        } else {
+            $excerpt = get_bloginfo('description');
+        }
+        ?>
+ 
+    <meta property="og:title" content="<?php echo the_title(); ?>"/>
+    <meta property="og:description" content="<?php echo $excerpt; ?>"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+    <meta property="og:image" content="<?php echo $img_src; ?>"/>
+ 
+<?php
+    } else if (is_front_page()) {
+    ?>
+    <meta property="og:title" content="<?php echo the_title(); ?>"/>
+    <meta property="og:description" content="Collectif réuni autour d’une même envie : faire ensemble et partager des créations sonores et radiophoniques."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+    <meta property="og:image" content="<?php echo $img_src; ?>"/>
+    <?php 
+    } else {
+        return;
+    }
+}
+add_action('wp_head', 'fb_opengraph', 5);
+
+
+function lcdlg_js() {
+?>
+	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/common.js"></script>
+	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/player.js"></script>
+	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/jquery.jplayer.js"></script>
+	<?php
+}
+
+add_action('wp_head', 'lcdlg_js', 5000);
+
+function lcdlg_jscss_embed() {
+?>
+    <link rel='stylesheet' id='suits-style-css'  href='http://lecridelagirafe.org/wp-content/themes/suits/style.css?ver=4.9.4' type='text/css' media='all' />
+    <link rel='stylesheet' id='child-style-css'  href='http://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/style.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='suits-fonts-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+    
+		<script type='text/javascript' src='http://lecridelagirafe.org/wp-includes/js/jquery/jquery.js'></script>
+		<script type='text/javascript' src='http://lecridelagirafe.org/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+		<script type='text/javascript' src='http://lecridelagirafe.org/wp-includes/js/wp-embed.min.js?ver=4.9.4'></script>
+    <script type="text/javascript" src="http://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/common.js"></script>
+    <script type="text/javascript" src="http://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/player.js"></script>
+		<script type="text/javascript" src="http://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/jquery.jplayer.js"></script>
+<?php 
+}
+
+add_action('embed_head', 'lcdlg_jscss_embed', 5000);
+
 ?>

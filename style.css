@@ -332,6 +332,10 @@ span.lcdlg-line:hover {
 		padding-top: 2.5em;
 }
 
+.actualite .entry-content>h3 {
+    clear: left;
+}
+
 /** virées */
 .viree .entry-header .entry-thumbnail {
 		width: 50%;
@@ -1531,6 +1535,10 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
   font-size: 60%;
 }
 
+#front-page-one .widget_media_image a {
+  border: 0;
+}
+
 #front-page-one .widget_custom_html {
   margin: 0 1em 1em 0 !important;
   text-align: left;
@@ -1564,6 +1572,10 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 #front-page-two .size-thumbnail {
         width: 120px;
         height: auto;
+}
+
+#front-page-two p {
+  margin-bottom: 0;
 }
 
 .front-page-panel .cri-preview .cri-p-gauche {
@@ -1617,6 +1629,12 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
     font-size: 85%;
 }
 
+.remarque {
+    clear: both;
+    float: left;
+    font-size: 75%;
+}
+
 .widget {
   border-bottom: 0;
   margin-bottom: 0;
@@ -1638,4 +1656,59 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
         text-align: justify;
         margin-left: -62px;
     }
+}
+
+
+/* embed */
+.embed-code {
+  float: right;
+  width: 3em;
+  background: #aaa9a7;
+  color: #fff;
+  border-radius: 0.2em;
+}
+.embed-code .ec-header {
+  height: 2em;
+  line-height: 2em;
+  padding-right: 0.5em;
+  text-align: right;
+  font-weight: bold;
+  cursor: pointer;
+}
+.embed-code .ec-content {
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.2em;
+  font-size: 1px;
+  cursor: text;
+  font-family: mono;
+}
+.embed-code .ec-footer {
+  height: 0;
+  overflow: hidden;
+}
+
+.embed-code:hover {
+    width: 100%;
+    transition: width  0.25s ease-out, height 0.25s ease-out;
+    height: auto;
+}
+
+.embed-code:hover .ec-content {
+  height: auto;
+  margin: 0 1px;
+  background: #f4f3ef;
+  color: #000;
+  padding: 0.3em;
+  margin-top: -0.2em;
+  font-size: 1em;
+  transition: font-size 0.25s ease-out;
+}
+.embed-code:hover .ec-footer {
+    height: 1.7em;
+    text-align: right;
+    padding-right: 0.5em;
+    line-height: 1.7em;
+    font-size: 70%;
+    transition: height 0.25s ease-out;
 }

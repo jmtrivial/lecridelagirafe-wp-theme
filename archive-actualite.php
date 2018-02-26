@@ -52,7 +52,7 @@ get_header(); ?>
 							$first = false;
 						else
 							the_post();
-						get_template_part( 'content', get_post_format() ); 
+						get_template_part( 'content-actualite', get_post_format() ); 
 						
 					}
 					while ( have_posts() );
@@ -65,7 +65,7 @@ get_header(); ?>
 			<?php suits_paging_nav(); ?>
 
 		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'content-actualite', 'none' ); ?>
 		<?php endif; ?>
     <script>updateFilters();</script>
 		</div><!-- #content -->
