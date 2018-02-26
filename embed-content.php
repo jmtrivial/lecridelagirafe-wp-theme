@@ -11,7 +11,7 @@
 	
 
 		<div class="entry-thumbnail">
-				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_post_thumbnail($size = 'thumbnail'); ?></a>
+				<a href="<?php the_permalink(); ?>" target="_top" rel="bookmark"><?php the_post_thumbnail($size = 'thumbnail'); ?></a>
     </div>
 
 		<p class="wp-embed-heading">
@@ -56,9 +56,6 @@
                     supplied: "mp3",
                     autoBlur: false,
                     keyEnabled: true,
-                    play: function() {
-                      console.log("play");
-                    },
                     ready: function () {
                         jQuery(this).jPlayer("setMedia", {
                           title: "'.$sons[ 'post_title'].'",

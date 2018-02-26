@@ -19,7 +19,7 @@ if ( ! headers_sent() ) {
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 	<title><?php echo wp_get_document_title(); ?></title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- meta http-equiv="X-UA-Compatible" content="IE=edge"-->
 	<?php
 	/**
 	 * Prints scripts or data in the embed template <head> tag.

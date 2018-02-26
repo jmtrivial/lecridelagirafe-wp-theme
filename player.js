@@ -279,7 +279,6 @@ function ajouterLecteurByClass(classSelector, setPlayerIfEmpty = false, setInter
 jQuery(document).ready(function(){
 	
   if (jQuery("#lcdlg-bandeaubas").length) {
-    console.log("test");
     jQuery("#lcdlg-bandeaubas").removeClass("lcdlg-hidden");
     jQuery(".zaback").addClass("with-bb");
     jQuery(".site-info-container").addClass("with-bb");
