@@ -647,7 +647,7 @@ function fb_opengraph() {
  
     if(is_single()) {
         if(has_post_thumbnail($post->ID)) {
-            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
+            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium')[0];
         } else {
             $img_src = get_stylesheet_directory_uri() . '/images/lecridelagirafe-1400.png';
         }
