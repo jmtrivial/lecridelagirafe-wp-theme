@@ -136,7 +136,7 @@ h1, h2, h3, h4 {
 		position: relative;
 		float: left;
 		width: 25%;
-		padding: 0 0.4em;
+		padding: 0 0.2em;
 }
 .lcdlg-portfolio {
 		overflow: hidden;
@@ -294,7 +294,9 @@ span.lcdlg-line:hover {
 	float: left;
 	margin-right: 1em;
     transition: opacity 0.25s ease-out;
-	border-radius: 0.2em;
+	border-radius: 0.4em;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   margin-top: 0;
 }
 .lcdlg-archive-auteur .entry-header .entry-thumbnail img, 
@@ -548,7 +550,30 @@ span.lcdlg-line:hover {
 
 article {
 		padding-bottom: 0.8em !important;
+    margin-bottom: 0.5em !important;
 }
+
+.lcdlg-archive article header, .lcdlg-archive article .entry-summary {
+        background: #fff;
+}
+.lcdlg-archive article header h2, .lcdlg-archive article header .lcdlg-date {
+    padding: 0 0.4em;
+}
+
+.lcdlg-archive article .entry-header {
+    	border-radius: 0.4em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.lcdlg-archive article .entry-summary {
+    padding: 0.8em;
+    line-height: 1.5em;
+    	border-radius: 0;
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+    text-align: justify;
+}
+
 .hentry {
          border-bottom: 0;   
 }
@@ -1583,6 +1608,7 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
     clear: both;
     width: 120px;
     margin-bottom: 0.5em;
+    line-height: 1.5rem;
 }
 .front-page-panel .cri-preview .cri-p-gauche img {
   		border-radius: 0.2em;
