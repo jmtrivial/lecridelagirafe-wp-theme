@@ -295,8 +295,6 @@ span.lcdlg-line:hover {
 	margin-right: 1em;
     transition: opacity 0.25s ease-out;
 	border-radius: 0.4em;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   margin-top: 0;
 }
 .lcdlg-archive-auteur .entry-header .entry-thumbnail img, 
@@ -386,8 +384,12 @@ span.lcdlg-line:hover {
 		float: left;
 }
 
-.lcdlg-portfolio .entry-header .entry-thumbnail img {
+.lcdlg-portfolio .entry-header .entry-thumbnail img,
+.lcdlg-archive  .entry-header .entry-thumbnail img {
 	width: 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
 }
 
 .auteur .entry-header .entry-thumbnail {
@@ -1592,6 +1594,12 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 
 .front-page-panel .cri-preview {
     clear: both;
+    height: 120px;
+    margin-bottom: 0.7em;
+    background: #fff;
+    padding-right: 0.4em;
+    overflow: hidden;
+ 		border-radius: 0.2em;
 }
 
 #front-page-two .size-thumbnail {
@@ -1607,11 +1615,12 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
     float: left;
     clear: both;
     width: 120px;
-    margin-bottom: 0.5em;
     line-height: 1.5rem;
 }
 .front-page-panel .cri-preview .cri-p-gauche img {
   		border-radius: 0.2em;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
 }
 
 .front-page-panel .cri-preview .cri-p-droit {
@@ -1635,7 +1644,7 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 
 .front-page-panel .widget h4.widget-title {
   clear: both;
-  margin-top: 1.5em;
+  margin-top: 0em;
 }
 .front-page-panel #pods_widget_list-7.widget h4.widget-title {
   margin-top: 0;
@@ -1644,8 +1653,8 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 .front-page-panel .cri-preview h5 {
     float: right;
     clear: right;
-    margin-top: 0em;
-    margin-bottom: 0.8em;
+    margin-top: 0.3em;
+    margin-bottom: 0.4em;
     text-align: right;
 }
 
