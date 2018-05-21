@@ -37,8 +37,19 @@ get_header(); ?>
 			<div>
 			<?php 
 				if (have_posts()) {
+          the_post();
+					$first = true;
+					$nb = 0;
 					do {
-						the_post();
+            if ($nb % 4 == 0)
+							echo "<div class=\"div-4\"> </div>";
+						else if ($nb % 2 == 0)
+							echo "<div class=\"div-2\"> </div>";
+						$nb = $nb + 1;
+						if ($first)
+							$first = false;
+						else
+							the_post();
 						get_template_part( 'content', get_post_format() ); 
 						
 					}
