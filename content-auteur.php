@@ -35,10 +35,11 @@
 		<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'suits' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 	</div><!-- .entry-content -->
 	<?php 
-    function cmp($a, $b) {
-      return strcmp($b["post_date"], $a["post_date"]);
+    if (!function_exists('cmp')) {
+      function cmp($a, $b) {
+        return strcmp($b["post_date"], $a["post_date"]);
+      }
     }
-	
 	if(is_single()) {
     			$pod = pods( 'auteur', get_the_ID() );
     			$contributions = $pod->field('contributions');
