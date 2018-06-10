@@ -34,6 +34,64 @@
 		<?php the_content( __( 'Lire la suite <span class="meta-nav">&rarr;</span>', 'suits' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'suits' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
 	</div><!-- .entry-content -->
+	<?php 
+    function cmp($a, $b) {
+      return strcmp($b["post_date"], $a["post_date"]);
+    }
+	
+	if(is_single()) {
+    			$pod = pods( 'auteur', get_the_ID() );
+    			$contributions = $pod->field('contributions');
+    			
+    			if (sizeof($contributions) > 0) {
+            echo "<div class=\"auteur-contributions\">";
+            echo "<h2>Les cris de ".$pod->field('post_title')."</h2>";
+            echo "<ul>";
+            usort($contributions, "cmp");
+            foreach($contributions as $c) {
+              $podc = pods( 'son', $c["ID"] );
+              echo "<li>";
+              echo "<a class=\"contribution lcdlg-line\" href=\"".$podc->field("permalink") . "\">";
+              echo $podc->field("post_thumbnail");
+              echo "<span class=\"lcdlg-tag lcdlg-tag-contenu\">";
+              $first = true;
+              foreach($podc->field("type_de_contenu") as $typecontenu) {
+                if ($first) 
+                  $first = false;
+                else
+                  echo ", ";
+                echo $typecontenu["name"];
+              }
+              echo "</span>";
+              echo "<span>".$c["post_title"]."</span> ";
+              echo "</a>";
+              echo "</li>";
+            }
+            echo "</ul>";
+            echo "</div>";
+          }
+          
+          $contributionsactualite = $pod->field('contributions_actualites');
+    			
+    			if (sizeof($contributionsactualite) > 0) {
+            echo "<div class=\"auteur-contributions-actualites\">";
+            echo "<h2>Les échos de ".$pod->field('post_title')."</h2>";
+            echo "<ul>";
+            usort($contributionsactualite, "cmp");
+            foreach($contributionsactualite as $c) {
+              $podc = pods( 'actualite', $c["ID"] );
+              echo "<li>";
+              echo "<a class=\"contribution-actualite lcdlg-line\" href=\"".$podc->field("permalink") . "\">";
+              echo $podc->field("post_thumbnail");
+              echo "<span>".$c["post_title"]."</span> ";
+              echo "</a>";
+              echo "</li>";
+            }
+            echo "</ul>";
+            echo "</div>";
+          }
+	}
+	?>
 
 	<footer class="entry-meta">
 		<!--?php suits_entry_meta(); ?-->
