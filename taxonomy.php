@@ -48,12 +48,27 @@ $term_name = get_term_by( 'slug', $term, $taxonomy );
 					
 					?>"><?php echo $term_name->name; ?></span></h1>
 				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="archive-meta">%s</div>', $term_description );
-					endif;
-
+          if ($taxonomy == "serie") {
+            $pod = pods( 'serie', $term );
+            print '<div class="archive-meta">';
+            if ($pod->field('illustration' )) {
+              print "<div class=\"bandeau\"><img src=\"".$pod->display( 'illustration' )."\" /></div>";
+            }
+            $term_description = term_description();
+            if ( ! empty( $term_description ) ) :
+              printf('<div class="texte">%s</div>', $term_description );
+            endif;
+            print "</div>";
+          }
+          else {
+				
+            // Show an optional term description.
+            $term_description = term_description();
+            if ( ! empty( $term_description ) ) :
+              printf( '<div class="archive-meta">%s</div>', $term_description );
+            endif;
+          }
+          
 					// If a user has filled out their description, show a bio on their entries.
 					if ( is_author() && get_the_author_meta( 'description' ) ) : ?>
 						<div class="archive-meta">

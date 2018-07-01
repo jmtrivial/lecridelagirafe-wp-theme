@@ -51,7 +51,6 @@ get_header(); ?>
 				?></h1>
 				<?php
 
-
 					// Show an optional term description.
 					$term_description = term_description();
 					if ( ! empty( $term_description ) ) :
