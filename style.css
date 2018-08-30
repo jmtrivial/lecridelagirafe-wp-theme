@@ -309,8 +309,10 @@ span.lcdlg-line:hover {
 	opacity: 0.9;
 }
 
+
 .lcdlg-archive-auteur .archive-header,
 .lcdlg-archive-viree .archive-header,
+.lcdlg-archive .archive-header,
 .tax-serie .archive-header {
     border-bottom: 0;
     padding-bottom: 1.2em;
@@ -975,7 +977,11 @@ button#lcdlg-toggle-filter {
 		border-top: 1px solid black;
 }
 body.lcdlg-filter-off .beautiful-taxonomy-filters {
-	display: none;
+/*	display: none;*/
+	height: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 }
 .beautiful-taxonomy-filters-tax.filter-count-5 {
 	padding: 0.4em;
@@ -1554,6 +1560,13 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
       padding-top: 0;
       margin-left: 0;
     }
+}
+
+#front-page-two .lcdlg-tag-serie {
+  display: inline;
+  float: none;
+  font-size: 90%;
+  margin-bottom: 0.5em;
 }
 
 #front-page-one .widget_custom_html a {
