@@ -710,4 +710,12 @@ function lcdlg_jscss_embed() {
 
 add_action('embed_head', 'lcdlg_jscss_embed', 5000);
 
+function sort_query($query) {
+    if ($query->is_tax() && $query->is_main_query() && isset($query->query_vars['serie'])) {
+        $query->set( 'order', 'ASC' );
+    }
+}
+add_action('pre_get_posts', 'sort_query');
+
+
 ?>
