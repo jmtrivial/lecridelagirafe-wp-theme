@@ -27,6 +27,7 @@
 		}
 		.site-header {
 			background-color: <?php echo get_theme_mod('masthead_color'); ?>;
+			background-size: auto;
 		}
 		#navbar {
 			background-color: <?php echo get_theme_mod('menu_bg_color'); ?>;
