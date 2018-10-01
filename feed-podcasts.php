@@ -9,6 +9,25 @@
 
 header('Content-Type: ' . feed_content_type('rss') . '; charset=' . get_option('blog_charset'), true);
 
+function wavDur($file) {
+  $fp = fopen($file, 'r');
+  if (fread($fp,4) == "RIFF") {
+    fseek($fp, 20);
+    $rawheader = fread($fp, 16);
+    $header = unpack('vtype/vchannels/Vsamplerate/Vbytespersec/valignment/vbits',$rawheader);
+    $pos = ftell($fp);
+    while (fread($fp,4) != "data" && !feof($fp)) {
+      $pos++;
+      fseek($fp,$pos);
+    }
+    $rawheader = fread($fp, 4);
+    $data = unpack('Vdatasize',$rawheader);
+    $sec = $data[datasize]/$header[bytespersec];
+    $minutes = intval(($sec / 60) % 60);
+    $seconds = intval($sec % 60);
+    return str_pad($minutes,2,"0", STR_PAD_LEFT).":".str_pad($seconds,2,"0", STR_PAD_LEFT);
+  }
+}
 
 /* cas taxonomy */
 $taxonomy = get_query_var( 'taxonomy' );
@@ -163,10 +182,16 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 				echo "-";
 			}?></itunes:subtitle>
       <itunes:summary><![CDATA[<?php the_excerpt_rss(); ?>]]></itunes:summary>
-      <itunes:duration><?php 
-        $mp3file = new MP3File($local_url);
-        $duration = $mp3file->getDurationEstimate();
-        echo MP3File::formatTime($duration);
+      <itunes:duration><?php
+	$path_parts = pathinfo($local_url);
+	if (in_array($path_parts['extension'], array("mp3", "MP3"))) {
+	        $mp3file = new MP3File($local_url);
+        	$duration = $mp3file->getDurationEstimate();
+	        echo MP3File::formatTime($duration);
+	}
+	else if (in_array($path_parts['extension'], array("wav", "WAV"))) {
+		echo wavDur($local_url);
+	}
       ?></itunes:duration>
 		<?php
 		/**
