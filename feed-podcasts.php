@@ -128,11 +128,12 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 			$related = $pod->field( 'contenu_audio' );
 			if ( ! empty( $related ) ) {
 					$url_son = $related["guid"];
+					$url_son = str_replace("http://", "https://", $url_son);
 			}
 
-        $local_url = str_replace("https://", "http://", $url_son);
-        $local_url = str_replace("http://lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
-        $local_url = str_replace("http://dev.lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
+        $local_url = str_replace("http://", "https://", $url_son);
+        $local_url = str_replace("https://lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
+        $local_url = str_replace("https://dev.lecridelagirafe.org/wp-content/", get_stylesheet_directory() . "/../../", $local_url);
 
 			
 			$authors = $pod->field( 'auteur' );
