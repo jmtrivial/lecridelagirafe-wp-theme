@@ -236,7 +236,7 @@ header .lcdlg-tag {
 		background: #fff;
 		border-radius: 0.5em;
 		display: block;
-		min-height: 5em;
+	/*	min-height: 5em;*/
 		margin: 0.8em 0;
 }
 
@@ -254,7 +254,7 @@ span.lcdlg-line:hover {
 
 .lcdlg-line>span {
 		display: inline-block;
-		margin-top: 1.6em;
+		margin-top: 1.2em;
 		font-weight: bold;
 		color: #222;
 }
@@ -267,10 +267,10 @@ span.lcdlg-line:hover {
 .lcdlg-line img {
 		height: 4em;
 		vertical-align: center;
-		margin-right: 1em;
-		margin-top: 0.4em;
+		margin: 0.1em 1em 0.1em 0;
+
 		width: auto;
-		border-radius: 0.5em;	
+		border-radius: 0.2em;	
 		display: inline-block;
 }
 
