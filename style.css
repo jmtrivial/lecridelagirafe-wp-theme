@@ -72,6 +72,7 @@ html {
 
 header {
 			margin-bottom: 0 !important;
+			border-bottom: 0 !important;
 }
 
 
@@ -1331,6 +1332,7 @@ button#lcdlg-toggle-filter {
 	background-size: cover;
 	padding: 0;
 	margin: 0;
+	background-color: transparent;
 }
 #jp-play, #jp-pause {
 	padding: 0 7%;
