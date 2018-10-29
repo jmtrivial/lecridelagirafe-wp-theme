@@ -55,6 +55,7 @@ input,
 select,
 textarea {
 	font-family: "Gravity", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	background: #fff;
 }
 
 html {
@@ -231,7 +232,9 @@ header .lcdlg-tag {
 
 .lcdlg-line {
 		padding: 0.2em 1em;
-		border-bottom: 1px solid #2d1000;
+/*		border-bottom: 1px solid rgba(0, 0, 0, 0.1);*/
+		background: #fff;
+		border-radius: 0.5em;
 		display: block;
 		min-height: 5em;
 		margin: 0.8em 0;
@@ -427,7 +430,10 @@ span.lcdlg-line:hover {
 		padding: 3em;
 }
 
-.lcdlg-archive-auteur .auteur .lcdlg-content {
+.lcdlg-ar
+		background: #fff;
+		border-radius: 0.5em;chive-auteur .auteur .lcdlg-content {
+	height: 1020px;
 		padding: 3em 0;
 }
 
@@ -1636,6 +1642,11 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
   		border-radius: 0.2em;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+}
+
+.front-page-panel .cri-preview .cri-p-gauche a {
+	 text-decoration: none;
+	border: 0 !important;
 }
 
 .front-page-panel .cri-preview .cri-p-droit {
