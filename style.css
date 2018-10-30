@@ -52,6 +52,7 @@
 html,
 button,
 input,
+input[type="submit"],
 select,
 textarea {
 	font-family: "Gravity", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
@@ -294,7 +295,7 @@ span.lcdlg-line:hover {
 .son .entry-thumbnail img {
 	width: 50%;
 	height: auto;
-	clear: both;
+	clear: left;
 	float: left;
 	margin-right: 1em;
     transition: opacity 0.25s ease-out;
@@ -1153,7 +1154,7 @@ button#lcdlg-toggle-filter {
 			padding: 0;
 			display: block;
 	}
-	#lcdlg-bb-open {
+	/*#lcdlg-bb-open {
 		display: block;
 		float: right;
 		width: 2.5em;
@@ -1163,7 +1164,7 @@ button#lcdlg-toggle-filter {
 		line-height: 1;
 		text-align: center;
 		height: 3em;
-	}
+	}*/
 	.zaback.with-bb {
 		bottom: calc(20px + 3em);
 	}
@@ -1180,7 +1181,12 @@ button#lcdlg-toggle-filter {
 	}
 	#lcdlg-bb-c-texte {
 		height: 3em;
-		width: calc(100% - 2.5em - 3em);
+		width: calc(100% - 3em);
+	}
+	#lcdlg-bb-c-texte #jp-title {
+		line-height: 1.2em;
+		fony-size: 70%;
+		margin-top: 0.1em;
 	}
 }
 
