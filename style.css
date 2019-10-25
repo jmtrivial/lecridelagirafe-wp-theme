@@ -875,7 +875,7 @@ body.home #lcdlg-mainmenu a span {
 		background: #202100;	
 }
 
-#navbar.lcdlg-menutop {
+#navbar.lcdlg-menutop, body.home #navbar {
 	position: fixed;
 	top: 0px;
 	z-index: 9000;
@@ -887,12 +887,12 @@ body.home #lcdlg-mainmenu a span {
 }
 
 
-.logged-in #navbar.lcdlg-menutop {
+.logged-in #navbar.lcdlg-menutop, .logged-in body.home #navbar {
 	top: 32px;
 }
 
 .lcdlg-zero {
-	height: 0;
+	height: 0px;
 }
 
 
@@ -1645,11 +1645,13 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
     clear: both;
     width: 120px;
     line-height: 1.5rem;
+    background: #fff;
 }
 .front-page-panel .cri-preview .cri-p-gauche img {
   		border-radius: 0.2em;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+      background: #fff;
 }
 
 .front-page-panel .cri-preview .cri-p-gauche a {
@@ -1783,7 +1785,7 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 }
 
 #main {
-    padding-top: 2em !important;
+    padding-top: 3em !important;
 }
 
 .bandeau {

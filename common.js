@@ -35,8 +35,11 @@ function updateMenuSticky() {
     var menu = document.querySelector('#navbar');
 
     var menuPosition = jQuery("#lcdlg-bandeau").height();
-    if (jQuery('body').hasClass("home"))
+    if (jQuery('body').hasClass("home")) {
       menuPosition = 0;
+      $("#navbar").addClass("lcdlg-menutop");
+      $("#lcdlg-bandeau").addClass("lcdlg-zero");
+    }
     
 
     window.addEventListener('scroll', function() {
