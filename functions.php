@@ -642,7 +642,7 @@ function custom_breadcrumbs() {
        
 }
 
-function fb_opengraph() {
+/*function fb_opengraph() {
     global $post;
  
     if(is_single()) {
@@ -680,7 +680,7 @@ function fb_opengraph() {
         return;
     }
 }
-add_action('wp_head', 'fb_opengraph', 5);
+add_action('wp_head', 'fb_opengraph', 5);*/
 
 
 function lcdlg_js() {
