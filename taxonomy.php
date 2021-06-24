@@ -24,7 +24,16 @@ $term_name = get_term_by( 'slug', $term, $taxonomy );
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header">
 					<a href="<?php echo get_term_link($term_name);?>/feed/podcasts" class="lcdlg-podcasts">podcast rss <span class="logo" /></a>
-          <a href="https://itunes.apple.com/us/podcast/le-cri-de-la-girafe-nos-cris/id1342339823" class="lcdlg-podcasts">podcast itunes <span class="logo" /></a>
+					<?php
+					$url_itunes = "https://itunes.apple.com/us/podcast/le-cri-de-la-girafe-nos-cris/id1342339823";
+					if ($taxonomy == "serie") {
+                        $pod = pods( 'serie', $term );
+                        if ($pod->field('lien_itunes')) {
+                            $url_itunes  = $pod->display('lien_itunes');
+                        }
+					}
+                    ?>
+                    <a href="<?php echo $url_itunes; ?>" class="lcdlg-podcasts">podcast itunes <span class="logo" /></a>
 					<a href="<?php echo get_term_link($term_name);?>/feed" class="lcdlg-rss">rss <span class="logo" /></a>
 
 				<h1 class="archive-title" style="clear: none">Archives 
