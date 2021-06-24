@@ -29,6 +29,9 @@ function wavDur($file) {
   }
 }
 
+$image_principale = get_stylesheet_directory_uri() . "/images/lecridelagirafe-1400.png";
+
+
 /* cas taxonomy */
 $taxonomy = get_query_var( 'taxonomy' );
 $term = get_query_var( 'term' );
@@ -38,19 +41,27 @@ if ($taxonomy && $term) {
 	if ($taxonomy == "duree")
 		$page_name = "durée de ";
 	else if ($taxonomy == "type_de_contenu")
-		$page_name = "type";
+		$page_name = "type ";
 	else if ($taxonomy == "theme")
-		$page_name = "thème";
+		$page_name = "thème ";
 	else if ($taxonomy == "recurrence")
-		$page_name = "récurrence";
+		$page_name = "récurrence ";
 	else if ($taxonomy == "type_de_contenu")
 		$page_name = "";
-	else if ($taxonomy == "serie")
-		$page_name = "série";
+	else if ($taxonomy == "serie") {
+		$page_name = "";
+		// on vérifie s'il y a une vignette de série
+		$pod = pods( 'serie', $term );
+        if ($pod->field('vignette_de_podcast' )) {
+              $image_principale = $pod->display( 'vignette_de_podcast' );
+        }
+            
+    }
 	else
 		$page_name = $taxonomy;
-					
-	$page_name .= " " . $term_name->name;
+    
+    
+	$page_name .= $term_name->name;
 	
 	$permalink = get_term_link($term_name);
 }
@@ -59,7 +70,9 @@ else {
 	$permalink = get_home_url() . "/sons/";
 }
 
-$page_name_full = "Le cri de la girafe - " . $page_name;
+$page_name_full = $page_name . " | Le cri de la girafe";
+
+
 
 
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
@@ -76,14 +89,14 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 	?></lastBuildDate>
 	<generator>Le cri de la girafe</generator>
 	<image>
-      <url><?php echo get_stylesheet_directory_uri(); ?>/images/lecridelagirafe-1400.png</url>
+      <url><?php echo $image_principale; ?></url>
       <title><?php echo $page_name_full; ?></title>
       <link><?php echo $permalink; ?></link>
     </image>
     <itunes:author>Le cri de la girafe</itunes:author>
     <itunes:category text="Society &amp; Culture" />
     <itunes:explicit>no</itunes:explicit>
-    <itunes:image href="<?php echo get_stylesheet_directory_uri(); ?>/images/lecridelagirafe-1400.png" />
+    <itunes:image href="<?php echo $image_principale; ?>" />
     <itunes:owner>
       <itunes:email>contact@lecridelagirafe.org</itunes:email>
       <itunes:name>Le cri de la girafe</itunes:name>
