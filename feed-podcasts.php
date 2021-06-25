@@ -53,7 +53,16 @@ if ($taxonomy && $term) {
 		// on vérifie s'il y a une vignette de série
 		$pod = pods( 'serie', $term );
         if ($pod->field('vignette_de_podcast' )) {
-              $image_principale = $pod->display( 'vignette_de_podcast' );
+              //$image_principale = $pod->display( 'vignette_de_podcast' );
+              
+              $image_principale  = pods_image_url( 
+                    $pod->field( 'vignette_de_podcast', TRUE ),
+                    'lcdlg-podcast',
+                    0,
+                    array(
+                    ),
+                    true
+                );
         }
             
     }
@@ -159,6 +168,10 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 				$auteurs = join( ", ", $authlist);	
 
 			}
+			
+			if (has_post_thumbnail()) {
+              echo "<itunes:image href=\"" . get_the_post_thumbnail_url(get_the_ID(), 'lcdlg-podcast') . "\" />";
+            }
 		?>
 	  <enclosure url="<?php echo $url_son;?>" length="<?php echo filesize($local_url);?>" type="audio/mpeg"  />
       <guid><?php echo $url_son;?></guid>

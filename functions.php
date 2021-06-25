@@ -3,6 +3,8 @@
 
 add_image_size( "lcdlg-preview", 300, 300, true);
 
+add_image_size( "lcdlg-podcast", 1400, 1400, true);
+
 
                                                                                                                                                                                              
 function lcdlg_color_customizer($wp_customize){                                                                                                                                              
