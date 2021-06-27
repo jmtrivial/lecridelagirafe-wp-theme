@@ -91,7 +91,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>'; ?>
 	<link><?php echo $permalink; ?></link>
 	<description><?php bloginfo_rss('description') ?></description>
 	<language><?php bloginfo_rss( 'language' ); ?></language>
-	<atom:link href="http://lecridelagirafe.org/sons/feed/podcasts" rel="self" type="application/rss+xml" />
+	<atom:link href="<?php echo $permalink; ?>/feed/podcasts" rel="self" type="application/rss+xml" />
 	<lastBuildDate><?php
 		$date = get_lastpostmodified( 'GMT' );
 		echo $date ? mysql2date( 'D, d M Y H:i:s +0000', $date, false ) : date( 'D, d M Y H:i:s +0000' );
