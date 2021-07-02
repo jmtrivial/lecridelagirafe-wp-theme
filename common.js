@@ -1,5 +1,20 @@
 
 
+function updateLiensSerie() {
+    $('a.lcdlg-dernier').each(function() {
+        if ($(this).attr("href") == "") {
+            $(this).addClass("lcdlg-a-venir");
+            $(this).text("épisode suivant bientôt disponible");
+        };
+    });
+    $('a.lcdlg-premier').each(function() {
+        if ($(this).attr("href") == "") {
+            $(this).addClass("lcdlg-a-venir");
+            $(this).text("épisode précédent bientôt disponible");
+        };
+    });
+}
+
 function updateMenu() {
 	$("#menu-menu-superieur>li").removeClass("current-menu-item");
 	$("#menu-menu-superieur>li").removeClass("current_page_item");
@@ -13,6 +28,8 @@ function updateMenu() {
 	$("#site-navigation").removeClass("toggled-on");
 	$( '.menu-toggle' ).on( 'click.suits', function() { nav.toggleClass( 'toggled-on' );} );
 
+
+    updateLiensSerie();
 }
 
 function updateGeneralRendering() {
@@ -74,4 +91,5 @@ function updateFilters() {
 jQuery(document).ready(function(){
 	updateMenuSticky();
 	jQuery("#site-navigation").removeClass("toggled-on");
+    updateLiensSerie();
 });

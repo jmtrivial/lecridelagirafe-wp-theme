@@ -1050,9 +1050,11 @@ button#lcdlg-toggle-filter {
 #lcdlg-serie a {
 	border: 0;
 }
-.lcdlg-desactive {
+.lcdlg-desactive, .lcdlg-a-venir {
 		background: #ccc;
 }
+
+
 
 #tertiary .search-field {
 	background: #f7f7f7; 
@@ -1809,4 +1811,14 @@ article:hover  .entry-thumbnail a:hover .duree-popup {
 
 .archive-meta div.texte {
   margin: 0.5em;
+}
+
+
+.lcdlg-a-venir {
+        cursor: text;
+        opacity: 1 !important;
+        text-shadow: none !important;
+}
+.lcdlg-a-venir:hover {
+        text-shadow: none !important;
 }
