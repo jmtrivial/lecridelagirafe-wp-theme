@@ -43,6 +43,7 @@ function updateGeneralRendering() {
 	$("#navbar").removeClass("lcdlg-menutop");
 	$("#lcdlg-bandeau").removeClass("lcdlg-zero");
 	updateMenuSticky();
+    updateLiensSerie();
 
 }
 
