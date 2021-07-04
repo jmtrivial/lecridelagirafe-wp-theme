@@ -17,11 +17,11 @@
 			<div class="site-info-container">
 				<div class="site-info">
 					<?php do_action( 'suits_credits' ); ?>
-					<?php printf( __( 'Proudly powered by %s', 'suits' ), '<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform">WordPress</a>' ); ?>
+					<?php printf( __( 'Proudly powered by %s', 'suits' ), '<a href="https://wordpress.org/" title="Semantic Personal Publishing Platform">WordPress</a>' ); ?>
 					<span class="sep"> &middot; </span>
-					Thème adapté de <a href="http://www.themeweaver.net/" title="Theme Developer" rel="designer">Suits</a>
+					Thème adapté de <a href="https://www.themeweaver.net/" title="Theme Developer" rel="designer">Suits</a>
 					<span class="sep"> &middot; </span>
-					<a href="http://lecridelagirafe.org">Le cri de la girafe</a>
+					<a href="https://lecridelagirafe.org">Le cri de la girafe</a>
 					<span class="sep"> &middot; </span>
 					<a href="/wp-admin">admin</a>
 				</div><!-- .site-info -->

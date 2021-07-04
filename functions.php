@@ -697,16 +697,16 @@ add_action('wp_head', 'lcdlg_js', 5000);
 
 function lcdlg_jscss_embed() {
 ?>
-    <link rel='stylesheet' id='suits-style-css'  href='http://lecridelagirafe.org/wp-content/themes/suits/style.css?ver=4.9.4' type='text/css' media='all' />
-    <link rel='stylesheet' id='child-style-css'  href='http://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/style.css?ver=1.0.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='suits-style-css'  href='https://lecridelagirafe.org/wp-content/themes/suits/style.css?ver=4.9.4' type='text/css' media='all' />
+    <link rel='stylesheet' id='child-style-css'  href='https://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/style.css?ver=1.0.0' type='text/css' media='all' />
 <link rel='stylesheet' id='suits-fonts-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
     
-		<script type='text/javascript' src='http://lecridelagirafe.org/wp-includes/js/jquery/jquery.js'></script>
-		<script type='text/javascript' src='http://lecridelagirafe.org/wp-includes/js/jquery/jquery-migrate.min.js'></script>
-		<script type='text/javascript' src='http://lecridelagirafe.org/wp-includes/js/wp-embed.min.js?ver=4.9.4'></script>
-    <script type="text/javascript" src="http://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/common.js"></script>
-    <script type="text/javascript" src="http://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/player.js"></script>
-		<script type="text/javascript" src="http://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/jquery.jplayer.js"></script>
+		<script type='text/javascript' src='https://lecridelagirafe.org/wp-includes/js/jquery/jquery.js'></script>
+		<script type='text/javascript' src='https://lecridelagirafe.org/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+		<script type='text/javascript' src='https://lecridelagirafe.org/wp-includes/js/wp-embed.min.js?ver=4.9.4'></script>
+    <script type="text/javascript" src="https://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/common.js"></script>
+    <script type="text/javascript" src="https://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/player.js"></script>
+		<script type="text/javascript" src="https://lecridelagirafe.org/wp-content/themes/le-cri-de-la-girafe/jquery.jplayer.js"></script>
 <?php 
 }
 
