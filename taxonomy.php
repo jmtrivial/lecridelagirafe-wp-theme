@@ -31,9 +31,14 @@ $term_name = get_term_by( 'slug', $term, $taxonomy );
                         if ($pod->field('lien_itunes')) {
                             $url_itunes  = $pod->display('lien_itunes');
                         }
+                        else
+                            $url_itunes  = "";
 					}
+					
+					if ($url_itunes != "") {
                     ?>
                     <a href="<?php echo $url_itunes; ?>" class="lcdlg-podcasts">podcast itunes <span class="logo" /></a>
+                    <?php } ?>
 					<a href="<?php echo get_term_link($term_name);?>/feed" class="lcdlg-rss">rss <span class="logo" /></a>
 
 				<h1 class="archive-title" style="clear: none">Archives 
