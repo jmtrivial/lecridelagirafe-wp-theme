@@ -415,7 +415,7 @@ span.lcdlg-line:hover {
 	width: 25%;
 }
 .lcdlg-archive .entry-title {
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 }
 .lcdlg-archive .entry-summary {
     font-size: 80%;
@@ -1453,7 +1453,7 @@ button#lcdlg-toggle-filter {
 
 .lcdlg-date {
 		color: #888;
-		font-size: 110%;
+		font-size: 90%;
 }
 
 

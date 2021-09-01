@@ -10,10 +10,13 @@ class LCDLGPlayer {
 			
 			this.active = "";
 			this.firstLoad = true;
+            
+            console.log("constructor");
 			return LCDLGPlayer.instance;
 		}
 		
 		initPlayerEmbed(idPlayer, idContainer) {
+            console.log("initPlayerEmbed");
 			this.player = jQuery("#" + idPlayer);
       // create jplayer
       this.idContainer = "lecteur-" + idContainer;
@@ -109,6 +112,7 @@ class LCDLGPlayer {
 		
 		setTrack(id) {
 			// Set the track but not play it
+            console.log("setTrack");
 			if (this.active != id && this.player) {
 				this.player.jPlayer('setMedia', { mp3: this.tracks[id].file });
 				this.active = id;
